@@ -22640,7 +22640,7 @@
     </ItemState>
   </Configuration>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>LED</BeanType>
     <Name>LED1</Name>
     <CompNumb>5</CompNumb>
@@ -23434,7 +23434,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>KinetisSDK</BeanType>
     <Name>KSDK1</Name>
     <CompNumb>8</CompNumb>
@@ -23475,7 +23475,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>LED</BeanType>
     <Name>LED2</Name>
     <CompNumb>10</CompNumb>
