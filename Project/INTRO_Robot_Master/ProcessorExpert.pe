@@ -3,7 +3,7 @@
   <Header>
     <Name>INTRO_Robot_Master</Name>
     <SavedBy>Erich Styger</SavedBy>
-    <ModificationStamp>89</ModificationStamp>
+    <ModificationStamp>94</ModificationStamp>
     <Date>2016-02-29</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1550-0615</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>287</ProjectCompNumb>
+    <ProjectCompNumb>342</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -10265,8 +10265,8 @@
   <Configuration>
     <CompNumb>3</CompNumb>
     <NodeName>RoboV1</NodeName>
-    <CnfgEnabled>false</CnfgEnabled>
-    <TargetCPU>4</TargetCPU>
+    <CnfgEnabled>true</CnfgEnabled>
+    <TargetCPU>260</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
       <Count>0</Count>
@@ -10288,13 +10288,13 @@
       <ItemId6>16</ItemId6>
       <Value6>true</Value6>
       <ItemId7>18</ItemId7>
-      <Value7>true</Value7>
+      <Value7>false</Value7>
       <ItemId8>20</ItemId8>
       <Value8>false</Value8>
       <ItemId9>22</ItemId9>
       <Value9>false</Value9>
       <ItemId10>24</ItemId10>
-      <Value10>true</Value10>
+      <Value10>false</Value10>
       <ItemId11>27</ItemId11>
       <Value11>false</Value11>
       <ItemId12>30</ItemId12>
@@ -10302,73 +10302,73 @@
       <ItemId13>31</ItemId13>
       <Value13>true</Value13>
       <ItemId14>33</ItemId14>
-      <Value14>true</Value14>
+      <Value14>false</Value14>
       <ItemId15>35</ItemId15>
-      <Value15>true</Value15>
+      <Value15>false</Value15>
       <ItemId16>39</ItemId16>
-      <Value16>true</Value16>
+      <Value16>false</Value16>
       <ItemId17>40</ItemId17>
-      <Value17>true</Value17>
+      <Value17>false</Value17>
       <ItemId18>44</ItemId18>
-      <Value18>true</Value18>
+      <Value18>false</Value18>
       <ItemId19>47</ItemId19>
-      <Value19>true</Value19>
+      <Value19>false</Value19>
       <ItemId20>48</ItemId20>
-      <Value20>true</Value20>
+      <Value20>false</Value20>
       <ItemId21>50</ItemId21>
-      <Value21>true</Value21>
+      <Value21>false</Value21>
       <ItemId22>52</ItemId22>
-      <Value22>true</Value22>
+      <Value22>false</Value22>
       <ItemId23>54</ItemId23>
-      <Value23>true</Value23>
+      <Value23>false</Value23>
       <ItemId24>56</ItemId24>
-      <Value24>true</Value24>
+      <Value24>false</Value24>
       <ItemId25>58</ItemId25>
-      <Value25>true</Value25>
+      <Value25>false</Value25>
       <ItemId26>61</ItemId26>
-      <Value26>true</Value26>
+      <Value26>false</Value26>
       <ItemId27>62</ItemId27>
-      <Value27>true</Value27>
+      <Value27>false</Value27>
       <ItemId28>64</ItemId28>
-      <Value28>true</Value28>
+      <Value28>false</Value28>
       <ItemId29>66</ItemId29>
-      <Value29>true</Value29>
+      <Value29>false</Value29>
       <ItemId30>68</ItemId30>
-      <Value30>true</Value30>
+      <Value30>false</Value30>
       <ItemId31>77</ItemId31>
-      <Value31>true</Value31>
+      <Value31>false</Value31>
       <ItemId32>84</ItemId32>
-      <Value32>true</Value32>
+      <Value32>false</Value32>
       <ItemId33>91</ItemId33>
-      <Value33>true</Value33>
+      <Value33>false</Value33>
       <ItemId34>92</ItemId34>
-      <Value34>true</Value34>
+      <Value34>false</Value34>
       <ItemId35>94</ItemId35>
-      <Value35>true</Value35>
+      <Value35>false</Value35>
       <ItemId36>96</ItemId36>
-      <Value36>true</Value36>
+      <Value36>false</Value36>
       <ItemId37>98</ItemId37>
-      <Value37>true</Value37>
+      <Value37>false</Value37>
       <ItemId38>124</ItemId38>
       <Value38>false</Value38>
       <ItemId39>174</ItemId39>
-      <Value39>true</Value39>
+      <Value39>false</Value39>
       <ItemId40>190</ItemId40>
-      <Value40>true</Value40>
+      <Value40>false</Value40>
       <ItemId41>191</ItemId41>
-      <Value41>true</Value41>
+      <Value41>false</Value41>
       <ItemId42>212</ItemId42>
       <Value42>true</Value42>
       <ItemId43>214</ItemId43>
-      <Value43>true</Value43>
+      <Value43>false</Value43>
       <ItemId44>234</ItemId44>
-      <Value44>true</Value44>
+      <Value44>false</Value44>
       <ItemId45>260</ItemId45>
-      <Value45>false</Value45>
+      <Value45>true</Value45>
       <ItemId46>270</ItemId46>
-      <Value46>true</Value46>
+      <Value46>false</Value46>
       <ItemId47>276</ItemId47>
-      <Value47>true</Value47>
+      <Value47>false</Value47>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -10436,7 +10436,7 @@
   <Configuration>
     <CompNumb>37</CompNumb>
     <NodeName>RoboV2</NodeName>
-    <CnfgEnabled>true</CnfgEnabled>
+    <CnfgEnabled>false</CnfgEnabled>
     <TargetCPU>260</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -10610,7 +10610,7 @@
     <BeanType>BitIO</BeanType>
     <Name>LEDPin1</Name>
     <CompNumb>5</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>BITIO</IconName>
     <UserFolderName />
@@ -10823,7 +10823,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>Deinit</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -10834,7 +10834,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GetDir</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -10938,7 +10938,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ConnectPin</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -10954,7 +10954,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GetRawVal</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -11200,7 +11200,7 @@
     <BeanType>BitIO</BeanType>
     <Name>LEDPin2</Name>
     <CompNumb>7</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>BITIO</IconName>
     <UserFolderName />
@@ -11413,7 +11413,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>Deinit</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -11424,7 +11424,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GetDir</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -11528,7 +11528,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ConnectPin</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -11544,7 +11544,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GetRawVal</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -16418,7 +16418,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Shell</BeanType>
     <Name>CLS1</Name>
     <CompNumb>30</CompNumb>
@@ -16998,7 +16998,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Bluetooth_EGBT</BeanType>
     <Name>BT1</Name>
     <CompNumb>27</CompNumb>
@@ -17120,8 +17120,8 @@
           <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
           <ComponentUUID>com.freescale.processorexpert.asynchroserial</ComponentUUID>
           <BeanType>AsynchroSerial</BeanType>
-          <Name>Serial2</Name>
-          <CompNumb>28</CompNumb>
+          <Name>Serial1</Name>
+          <CompNumb>317</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>PHONE</IconName>
@@ -17135,7 +17135,7 @@
               <ItemSymbol>DeviceName</ItemSymbol>
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>true</UserReadOnly>
-              <Value>Serial2</Value>
+              <Value>Serial1</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>Ser</ItemSymbol>
@@ -17159,11 +17159,11 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>SpecInt</ItemSymbol>
-              <Value>INT_UART0_ERR</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>InpInt</ItemSymbol>
-              <Value>INT_UART0_RX_TX</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>InitPriority</ItemSymbol>
@@ -17187,7 +17187,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>OutInt</ItemSymbol>
-              <Value>INT_UART0_RX_TX</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>IntTxDPriority</ItemSymbol>
@@ -17216,7 +17216,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ErrInt</ItemSymbol>
-              <Value>INT_UART0_ERR</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>IntErrorPriority</ItemSymbol>
@@ -19700,7 +19700,7 @@
               <ItemSymbol>BeforeNewSpeedName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_BeforeNewSpeed</Value>
+              <Value>Serial1_BeforeNewSpeed</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>AfterNewSpeed</ItemSymbol>
@@ -19716,7 +19716,7 @@
               <ItemSymbol>AfterNewSpeedName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_AfterNewSpeed</Value>
+              <Value>Serial1_AfterNewSpeed</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnError</ItemSymbol>
@@ -19732,7 +19732,7 @@
               <ItemSymbol>OnErrorName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnError</Value>
+              <Value>Serial1_OnError</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnErrorPriority</ItemSymbol>
@@ -19754,7 +19754,7 @@
               <ItemSymbol>OnRxCharName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnRxChar</Value>
+              <Value>Serial1_OnRxChar</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxCharPriority</ItemSymbol>
@@ -19776,7 +19776,7 @@
               <ItemSymbol>OnRxCharExtName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnRxCharExt</Value>
+              <Value>Serial1_OnRxCharExt</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxCharExtPriority</ItemSymbol>
@@ -19798,7 +19798,7 @@
               <ItemSymbol>OnTxCharName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnTxChar</Value>
+              <Value>Serial1_OnTxChar</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnTxCharPriority</ItemSymbol>
@@ -19820,7 +19820,7 @@
               <ItemSymbol>OnFullRxBufName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnFullRxBuf</Value>
+              <Value>Serial1_OnFullRxBuf</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnFullRxBufPriority</ItemSymbol>
@@ -19842,7 +19842,7 @@
               <ItemSymbol>OnFreeTxBufName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnFreeTxBuf</Value>
+              <Value>Serial1_OnFreeTxBuf</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnFreeTxBufPriority</ItemSymbol>
@@ -19864,7 +19864,7 @@
               <ItemSymbol>OnBreakName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnBreak</Value>
+              <Value>Serial1_OnBreak</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnBreakPriority</ItemSymbol>
@@ -19891,7 +19891,7 @@
               <ItemSymbol>OnIdleName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnIdle</Value>
+              <Value>Serial1_OnIdle</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnIdlePriority</ItemSymbol>
@@ -19923,7 +19923,7 @@
               <ItemSymbol>OnTxCompleteName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnTxComplete</Value>
+              <Value>Serial1_OnTxComplete</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnTxCompletePriority</ItemSymbol>
@@ -19950,7 +19950,7 @@
               <ItemSymbol>OnRxActiveEdgeName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial2_OnRxActiveEdge</Value>
+              <Value>Serial1_OnRxActiveEdge</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxActiveEdgePriority</ItemSymbol>
@@ -20803,7 +20803,7 @@
         <ItemSymbol>Overrundevice</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>FTM3_Free</Value>
+        <Value />
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -20901,7 +20901,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterInt</ItemSymbol>
-        <Value>INT_FTM3</Value>
+        <Value />
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterInitPriority</ItemSymbol>
@@ -21860,8 +21860,8 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -22723,7 +22723,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Shell</BeanType>
     <Name>CLS1</Name>
     <CompNumb>174</CompNumb>
@@ -23009,7 +23009,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>SendCh</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
+        <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
@@ -23064,7 +23064,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IsHistoryCharacter</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
+        <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
@@ -23303,7 +23303,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Bluetooth_EGBT</BeanType>
     <Name>BT1</Name>
     <CompNumb>24</CompNumb>
@@ -23425,8 +23425,8 @@
           <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
           <ComponentUUID>com.freescale.processorexpert.asynchroserial</ComponentUUID>
           <BeanType>AsynchroSerial</BeanType>
-          <Name>Serial1</Name>
-          <CompNumb>25</CompNumb>
+          <Name>Serial2</Name>
+          <CompNumb>319</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>PHONE</IconName>
@@ -23440,7 +23440,7 @@
               <ItemSymbol>DeviceName</ItemSymbol>
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>true</UserReadOnly>
-              <Value>Serial1</Value>
+              <Value>Serial2</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>Ser</ItemSymbol>
@@ -23464,11 +23464,11 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>SpecInt</ItemSymbol>
-              <Value>INT_UART1_ERR</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>InpInt</ItemSymbol>
-              <Value>INT_UART1_RX_TX</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>InitPriority</ItemSymbol>
@@ -23492,7 +23492,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>OutInt</ItemSymbol>
-              <Value>INT_UART1_RX_TX</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>IntTxDPriority</ItemSymbol>
@@ -23521,7 +23521,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ErrInt</ItemSymbol>
-              <Value>INT_UART1_ERR</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>IntErrorPriority</ItemSymbol>
@@ -24311,7 +24311,7 @@
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>InpInt</ItemSymbol>
-                    <Value>INT_UART1_RX_TX</Value>
+                    <Value />
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>InitPriority</ItemSymbol>
@@ -24346,7 +24346,7 @@
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>OutInt</ItemSymbol>
-                    <Value>INT_UART1_RX_TX</Value>
+                    <Value />
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>IntTxDPriority</ItemSymbol>
@@ -24381,7 +24381,7 @@
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>ErrInt</ItemSymbol>
-                    <Value>INT_UART1_ERR</Value>
+                    <Value />
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>IntErrorPriority</ItemSymbol>
@@ -25499,10 +25499,10 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>0</Index>
-              <Value>true</Value>
+              <Index>1</Index>
+              <Value>false</Value>
               <LastSelection>true</LastSelection>
-              <LastUserSel>yes</LastUserSel>
+              <LastUserSel>never</LastUserSel>
               <UsrMethodName>RecvChar</UsrMethodName>
             </ItemState>
             <ItemState>
@@ -25518,13 +25518,13 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>RecvBlock</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>0</Index>
-              <Value>true</Value>
+              <Index>1</Index>
+              <Value>false</Value>
               <LastSelection>true</LastSelection>
-              <LastUserSel>yes</LastUserSel>
+              <LastUserSel>never</LastUserSel>
               <UsrMethodName>RecvBlock</UsrMethodName>
             </ItemState>
             <ItemState>
@@ -25543,10 +25543,10 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>0</Index>
-              <Value>true</Value>
+              <Index>1</Index>
+              <Value>false</Value>
               <LastSelection>true</LastSelection>
-              <LastUserSel>yes</LastUserSel>
+              <LastUserSel>never</LastUserSel>
               <UsrMethodName>ClearRxBuf</UsrMethodName>
             </ItemState>
             <ItemState>
@@ -25562,13 +25562,13 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>CharsInRxBuf</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
               <Value>false</Value>
               <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
+              <LastUserSel>never</LastUserSel>
               <UsrMethodName>CharsInRxBuf</UsrMethodName>
             </ItemState>
             <ItemState>
@@ -25576,10 +25576,10 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>0</Index>
-              <Value>true</Value>
+              <Index>1</Index>
+              <Value>false</Value>
               <LastSelection>true</LastSelection>
-              <LastUserSel>yes</LastUserSel>
+              <LastUserSel>never</LastUserSel>
               <UsrMethodName>GetCharsInRxBuf</UsrMethodName>
             </ItemState>
             <ItemState>
@@ -25687,13 +25687,13 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>SetRxBaudGenerator</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
               <Value>false</Value>
               <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
+              <LastUserSel>never</LastUserSel>
               <UsrMethodName>SetRxBaudGenerator</UsrMethodName>
             </ItemState>
             <ItemState>
@@ -25736,24 +25736,24 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>TurnRxOn</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
               <Value>false</Value>
               <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
+              <LastUserSel>never</LastUserSel>
               <UsrMethodName>TurnRxOn</UsrMethodName>
             </ItemState>
             <ItemState>
               <ItemSymbol>TurnRxOff</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
               <Value>false</Value>
               <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
+              <LastUserSel>never</LastUserSel>
               <UsrMethodName>TurnRxOff</UsrMethodName>
             </ItemState>
             <ItemState>
@@ -25931,13 +25931,13 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GetRxIdle</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
               <Value>false</Value>
               <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
+              <LastUserSel>never</LastUserSel>
               <UsrMethodName>GetRxIdle</UsrMethodName>
             </ItemState>
             <ItemState>
@@ -25993,35 +25993,35 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>BeforeNewSpeed</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Value>false</Value>
               <Expanded>false</Expanded>
               <LastSelection>false</LastSelection>
-              <LastUserSel>never</LastUserSel>
+              <LastUserSel>no</LastUserSel>
             </ItemState>
             <ItemState>
               <ItemSymbol>BeforeNewSpeedName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_BeforeNewSpeed</Value>
+              <Value>Serial2_BeforeNewSpeed</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>AfterNewSpeed</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Value>false</Value>
               <Expanded>false</Expanded>
               <LastSelection>false</LastSelection>
-              <LastUserSel>never</LastUserSel>
+              <LastUserSel>no</LastUserSel>
             </ItemState>
             <ItemState>
               <ItemSymbol>AfterNewSpeedName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_AfterNewSpeed</Value>
+              <Value>Serial2_AfterNewSpeed</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnError</ItemSymbol>
@@ -26037,7 +26037,7 @@
               <ItemSymbol>OnErrorName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnError</Value>
+              <Value>Serial2_OnError</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnErrorPriority</ItemSymbol>
@@ -26047,19 +26047,19 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxChar</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Value>false</Value>
               <Expanded>false</Expanded>
               <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
+              <LastUserSel>never</LastUserSel>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxCharName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnRxChar</Value>
+              <Value>Serial2_OnRxChar</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxCharPriority</ItemSymbol>
@@ -26069,19 +26069,19 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxCharExt</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Value>false</Value>
               <Expanded>false</Expanded>
               <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
+              <LastUserSel>never</LastUserSel>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxCharExtName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnRxCharExt</Value>
+              <Value>Serial2_OnRxCharExt</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxCharExtPriority</ItemSymbol>
@@ -26103,7 +26103,7 @@
               <ItemSymbol>OnTxCharName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnTxChar</Value>
+              <Value>Serial2_OnTxChar</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnTxCharPriority</ItemSymbol>
@@ -26113,19 +26113,19 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>OnFullRxBuf</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Value>false</Value>
               <Expanded>false</Expanded>
               <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
+              <LastUserSel>never</LastUserSel>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnFullRxBufName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnFullRxBuf</Value>
+              <Value>Serial2_OnFullRxBuf</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnFullRxBufPriority</ItemSymbol>
@@ -26147,7 +26147,7 @@
               <ItemSymbol>OnFreeTxBufName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnFreeTxBuf</Value>
+              <Value>Serial2_OnFreeTxBuf</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnFreeTxBufPriority</ItemSymbol>
@@ -26169,7 +26169,7 @@
               <ItemSymbol>OnBreakName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnBreak</Value>
+              <Value>Serial2_OnBreak</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnBreakPriority</ItemSymbol>
@@ -26184,19 +26184,19 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>OnIdle</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Value>false</Value>
               <Expanded>false</Expanded>
               <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
+              <LastUserSel>never</LastUserSel>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnIdleName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnIdle</Value>
+              <Value>Serial2_OnIdle</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnIdlePriority</ItemSymbol>
@@ -26228,7 +26228,7 @@
               <ItemSymbol>OnTxCompleteName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnTxComplete</Value>
+              <Value>Serial2_OnTxComplete</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnTxCompletePriority</ItemSymbol>
@@ -26255,7 +26255,7 @@
               <ItemSymbol>OnRxActiveEdgeName</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>Serial1_OnRxActiveEdge</Value>
+              <Value>Serial2_OnRxActiveEdge</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>OnRxActiveEdgePriority</ItemSymbol>
@@ -26918,7 +26918,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>FreeRTOS</BeanType>
     <Name>FRTOS1</Name>
     <CompNumb>35</CompNumb>
@@ -29552,7 +29552,7 @@
         <ItemSymbol>Overrundevice</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>FTM0_Free</Value>
+        <Value />
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -29650,7 +29650,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterInt</ItemSymbol>
-        <Value>INT_FTM0</Value>
+        <Value />
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterInitPriority</ItemSymbol>
@@ -31433,7 +31433,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>SeggerRTT</BeanType>
     <Name>RTT1</Name>
     <CompNumb>39</CompNumb>
@@ -31845,7 +31845,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>SeggerSystemView</BeanType>
     <Name>SYS1</Name>
     <CompNumb>40</CompNumb>
@@ -32150,7 +32150,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>LED</BeanType>
     <Name>LED_IR</Name>
     <CompNumb>44</CompNumb>
@@ -32216,8 +32216,8 @@
           <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
           <ComponentUUID>com.freescale.processorexpert.bitio</ComponentUUID>
           <BeanType>BitIO</BeanType>
-          <Name>LEDpin3</Name>
-          <CompNumb>45</CompNumb>
+          <Name>LEDpin1</Name>
+          <CompNumb>321</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -32231,7 +32231,7 @@
               <ItemSymbol>DeviceName</ItemSymbol>
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>true</UserReadOnly>
-              <Value>LEDpin3</Value>
+              <Value>LEDpin1</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>_Pin</ItemSymbol>
@@ -32500,8 +32500,8 @@
                     <ReadOnly>true</ReadOnly>
                     <UserReadOnly>false</UserReadOnly>
                     <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-                    <Index>1</Index>
-                    <Value>false</Value>
+                    <Index>0</Index>
+                    <Value>true</Value>
                     <LastSelection>false</LastSelection>
                     <LastUserSel>no</LastUserSel>
                     <UsrMethodName>PutVal</UsrMethodName>
@@ -33128,7 +33128,7 @@
         <ItemSymbol>Overrundevice</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>FTM2_Free</Value>
+        <Value />
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -33226,7 +33226,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterInt</ItemSymbol>
-        <Value>INT_FTM2</Value>
+        <Value />
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterInitPriority</ItemSymbol>
@@ -34181,8 +34181,8 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -34768,8 +34768,8 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -35355,8 +35355,8 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -35942,8 +35942,8 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -36529,8 +36529,8 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -37116,8 +37116,8 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -37384,7 +37384,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>QuadCounter</BeanType>
     <Name>Q4CLeft</Name>
     <CompNumb>77</CompNumb>
@@ -37452,8 +37452,8 @@
           <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
           <ComponentUUID>com.freescale.processorexpert.bitio</ComponentUUID>
           <BeanType>BitIO</BeanType>
-          <Name>C12</Name>
-          <CompNumb>78</CompNumb>
+          <Name>C11</Name>
+          <CompNumb>323</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -37467,7 +37467,7 @@
               <ItemSymbol>DeviceName</ItemSymbol>
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>true</UserReadOnly>
-              <Value>C12</Value>
+              <Value>C11</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>_Pin</ItemSymbol>
@@ -38048,7 +38048,7 @@
           <ComponentUUID>com.freescale.processorexpert.bitio</ComponentUUID>
           <BeanType>BitIO</BeanType>
           <Name>C23</Name>
-          <CompNumb>79</CompNumb>
+          <CompNumb>325</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -38819,7 +38819,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>QuadCounter</BeanType>
     <Name>Q4CRight</Name>
     <CompNumb>84</CompNumb>
@@ -38887,8 +38887,8 @@
           <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
           <ComponentUUID>com.freescale.processorexpert.bitio</ComponentUUID>
           <BeanType>BitIO</BeanType>
-          <Name>C13</Name>
-          <CompNumb>85</CompNumb>
+          <Name>C12</Name>
+          <CompNumb>327</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -38902,7 +38902,7 @@
               <ItemSymbol>DeviceName</ItemSymbol>
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>true</UserReadOnly>
-              <Value>C13</Value>
+              <Value>C12</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>_Pin</ItemSymbol>
@@ -39482,8 +39482,8 @@
           <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
           <ComponentUUID>com.freescale.processorexpert.bitio</ComponentUUID>
           <BeanType>BitIO</BeanType>
-          <Name>C25</Name>
-          <CompNumb>86</CompNumb>
+          <Name>C24</Name>
+          <CompNumb>329</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -39497,7 +39497,7 @@
               <ItemSymbol>DeviceName</ItemSymbol>
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>true</UserReadOnly>
-              <Value>C25</Value>
+              <Value>C24</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>_Pin</ItemSymbol>
@@ -42148,8 +42148,8 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -42478,12 +42478,12 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Tmr</ItemSymbol>
-        <Value>FTM0_CNT</Value>
+        <Value />
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
         <ItemSymbol>Ovf</ItemSymbol>
-        <Value>FTM0_Free</Value>
+        <Value />
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -42504,7 +42504,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>OvfInt</ItemSymbol>
-        <Value>INT_FTM0</Value>
+        <Value />
       </ItemState>
       <ItemState>
         <ItemSymbol>ShutdownFeature</ItemSymbol>
@@ -42917,7 +42917,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>CmpInt</ItemSymbol>
-              <Value>INT_FTM0</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>IntPriority</ItemSymbol>
@@ -44120,8 +44120,8 @@
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -44450,12 +44450,12 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Tmr</ItemSymbol>
-        <Value>FTM0_CNT</Value>
+        <Value />
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
         <ItemSymbol>Ovf</ItemSymbol>
-        <Value>FTM0_Free</Value>
+        <Value />
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -44476,7 +44476,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>OvfInt</ItemSymbol>
-        <Value>INT_FTM0</Value>
+        <Value />
       </ItemState>
       <ItemState>
         <ItemSymbol>ShutdownFeature</ItemSymbol>
@@ -44889,7 +44889,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>CmpInt</ItemSymbol>
-              <Value />
+              <Value>INT_LPTMR0</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>IntPriority</ItemSymbol>
@@ -45802,7 +45802,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Tmr</ItemSymbol>
-        <Value>PIT_CVAL1</Value>
+        <Value />
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -46069,7 +46069,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>CmpInt</ItemSymbol>
-              <Value>INT_PIT1</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>IntPriority</ItemSymbol>
@@ -47626,7 +47626,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>RNet</BeanType>
     <Name>RNET1</Name>
     <CompNumb>190</CompNumb>
@@ -47948,7 +47948,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>nRF24L01</BeanType>
     <Name>RF1</Name>
     <CompNumb>191</CompNumb>
@@ -47985,7 +47985,7 @@
           <ComponentUUID>com.freescale.processorexpert.bitio</ComponentUUID>
           <BeanType>BitIO</BeanType>
           <Name>CE1</Name>
-          <CompNumb>192</CompNumb>
+          <CompNumb>331</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -48030,8 +48030,8 @@
                 <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
                 <ComponentUUID>com.freescale.processorexpert.ldd.bitio_ldd</ComponentUUID>
                 <BeanType>BitIO_LDD</BeanType>
-                <Name>BitIoLdd22</Name>
-                <CompNumb>194</CompNumb>
+                <Name>BitIoLdd18</Name>
+                <CompNumb>332</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>PORT_LDD</IconName>
@@ -48045,7 +48045,7 @@
                     <ItemSymbol>DeviceName</ItemSymbol>
                     <ReadOnly>true</ReadOnly>
                     <UserReadOnly>true</UserReadOnly>
-                    <Value>BitIoLdd22</Value>
+                    <Value>BitIoLdd18</Value>
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>_Pin</ItemSymbol>
@@ -48580,7 +48580,7 @@
           <ComponentUUID>com.freescale.processorexpert.bitio</ComponentUUID>
           <BeanType>BitIO</BeanType>
           <Name>CSN1</Name>
-          <CompNumb>193</CompNumb>
+          <CompNumb>333</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -48625,8 +48625,8 @@
                 <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
                 <ComponentUUID>com.freescale.processorexpert.ldd.bitio_ldd</ComponentUUID>
                 <BeanType>BitIO_LDD</BeanType>
-                <Name>BitIoLdd23</Name>
-                <CompNumb>195</CompNumb>
+                <Name>BitIoLdd19</Name>
+                <CompNumb>334</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>PORT_LDD</IconName>
@@ -48640,7 +48640,7 @@
                     <ItemSymbol>DeviceName</ItemSymbol>
                     <ReadOnly>true</ReadOnly>
                     <UserReadOnly>true</UserReadOnly>
-                    <Value>BitIoLdd23</Value>
+                    <Value>BitIoLdd19</Value>
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>_Pin</ItemSymbol>
@@ -49233,7 +49233,7 @@
           <ComponentUUID>com.freescale.processorexpert.extint</ComponentUUID>
           <BeanType>ExtInt</BeanType>
           <Name>IRQ1</Name>
-          <CompNumb>196</CompNumb>
+          <CompNumb>335</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>EXTINT</IconName>
@@ -49279,7 +49279,7 @@
                 <ComponentUUID>com.freescale.processorexpert.ldd.extint_ldd</ComponentUUID>
                 <BeanType>ExtInt_LDD</BeanType>
                 <Name>ExtIntLdd2</Name>
-                <CompNumb>197</CompNumb>
+                <CompNumb>336</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>ExtInt_LDD</IconName>
@@ -50225,7 +50225,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>KinetisTools</BeanType>
     <Name>KIN1</Name>
     <CompNumb>212</CompNumb>
@@ -54787,7 +54787,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>FSL_USB_Stack</BeanType>
     <Name>USB1</Name>
     <CompNumb>270</CompNumb>
@@ -54838,9 +54838,9 @@
         <UserReadOnly>false</UserReadOnly>
         <Index>0</Index>
         <RegCompType>FSL_USB_CDC_Device</RegCompType>
-        <RegCompRepository>file:/${ProcessorExpertPath:user}</RegCompRepository>
+        <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
         <InheritedComponentState>
-          <Repository>file:/${ProcessorExpertPath:user}</Repository>
+          <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
           <BeanType>FSL_USB_CDC_Device</BeanType>
           <Name>CDC1</Name>
           <CompNumb>272</CompNumb>
@@ -54987,9 +54987,9 @@
               <UserReadOnly>false</UserReadOnly>
               <Index>0</Index>
               <RegCompType>RingBuffer</RegCompType>
-              <RegCompRepository>file:/${ProcessorExpertPath:user}</RegCompRepository>
+              <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
               <InheritedComponentState>
-                <Repository>file:/${ProcessorExpertPath:user}</Repository>
+                <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
                 <BeanType>RingBuffer</BeanType>
                 <Name>Tx1</Name>
                 <CompNumb>273</CompNumb>
@@ -55292,9 +55292,9 @@
               <UserReadOnly>false</UserReadOnly>
               <Index>0</Index>
               <RegCompType>RingBuffer</RegCompType>
-              <RegCompRepository>file:/${ProcessorExpertPath:user}</RegCompRepository>
+              <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
               <InheritedComponentState>
-                <Repository>file:/${ProcessorExpertPath:user}</Repository>
+                <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
                 <BeanType>RingBuffer</BeanType>
                 <Name>Rx1</Name>
                 <CompNumb>274</CompNumb>
@@ -55986,9 +55986,9 @@
         <UserReadOnly>false</UserReadOnly>
         <Index>0</Index>
         <RegCompType>FSL_USB_MSD_Host</RegCompType>
-        <RegCompRepository>file:/${ProcessorExpertPath:user}</RegCompRepository>
+        <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
         <InheritedComponentState>
-          <Repository>file:/${ProcessorExpertPath:user}</Repository>
+          <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
         </InheritedComponentState>
       </ItemState>
       <ItemState>
@@ -57233,7 +57233,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>InterruptVector_OTG_ID_CHG</ItemSymbol>
-              <Value>INT_USB0</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>InterruptVector_OTG_ID_CHGRequestFeatureGroup</ItemSymbol>
@@ -57655,7 +57655,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Timeout</BeanType>
     <Name>TMOUT1</Name>
     <CompNumb>276</CompNumb>
@@ -57799,7 +57799,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Utility</BeanType>
     <Name>UTIL1</Name>
     <CompNumb>31</CompNumb>
@@ -58576,7 +58576,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Wait</BeanType>
     <Name>WAIT1</Name>
     <CompNumb>9</CompNumb>
@@ -58775,7 +58775,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>KinetisSDK</BeanType>
     <Name>KSDK1</Name>
     <CompNumb>16</CompNumb>
@@ -58816,7 +58816,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>HardFault</BeanType>
     <Name>HF1</Name>
     <CompNumb>13</CompNumb>
@@ -58858,7 +58858,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file:/${ProcessorExpertPath:user}</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>CriticalSection</BeanType>
     <Name>CS1</Name>
     <CompNumb>12</CompNumb>
