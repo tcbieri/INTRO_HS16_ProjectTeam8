@@ -1,0 +1,1 @@
+Here the instructor project templates are placed.
