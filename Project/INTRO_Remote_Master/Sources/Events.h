@@ -33,6 +33,8 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
+#include "LEDPin1.h"
+#include "BitIoLdd17.h"
 #include "WAIT1.h"
 #include "UTIL1.h"
 #include "KIN1.h"
