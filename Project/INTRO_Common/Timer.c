@@ -34,11 +34,6 @@ void TMR_OnInterrupt(void) {
 
 		EVNT_SetEvent(EVNT_LED_HEARTBEAT);
 
-		/*
-		  LED1_Neg();
-		  LED2_Neg();
-		  LED3_Neg();	// Toggle LEDs
-		  */
 	}
 
 }
