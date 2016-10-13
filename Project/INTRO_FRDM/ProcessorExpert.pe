@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>91</ProjectCompNumb>
+    <ProjectCompNumb>92</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -15247,7 +15247,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>RNet</BeanType>
     <Name>RNET1</Name>
     <CompNumb>31</CompNumb>
@@ -15561,7 +15561,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>nRF24L01</BeanType>
     <Name>RF1</Name>
     <CompNumb>32</CompNumb>
@@ -26111,7 +26111,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Shell</BeanType>
     <Name>CLS1</Name>
     <CompNumb>55</CompNumb>
@@ -26691,7 +26691,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>SeggerRTT</BeanType>
     <Name>RTT1</Name>
     <CompNumb>58</CompNumb>
@@ -27097,7 +27097,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>SeggerSystemView</BeanType>
     <Name>SYS1</Name>
     <CompNumb>57</CompNumb>
@@ -29397,7 +29397,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>FreeRTOS</BeanType>
     <Name>FRTOS1</Name>
     <CompNumb>62</CompNumb>
@@ -31835,7 +31835,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Timeout</BeanType>
     <Name>TMOUT1</Name>
     <CompNumb>73</CompNumb>
@@ -31979,7 +31979,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>FSL_USB_Stack</BeanType>
     <Name>USB1</Name>
     <CompNumb>75</CompNumb>
@@ -32030,9 +32030,9 @@
         <UserReadOnly>false</UserReadOnly>
         <Index>0</Index>
         <RegCompType>FSL_USB_CDC_Device</RegCompType>
-        <RegCompRepository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</RegCompRepository>
+        <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
         <InheritedComponentState>
-          <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+          <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
           <BeanType>FSL_USB_CDC_Device</BeanType>
           <Name>CDC1</Name>
           <CompNumb>77</CompNumb>
@@ -32179,9 +32179,9 @@
               <UserReadOnly>false</UserReadOnly>
               <Index>0</Index>
               <RegCompType>RingBuffer</RegCompType>
-              <RegCompRepository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</RegCompRepository>
+              <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
               <InheritedComponentState>
-                <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+                <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
                 <BeanType>RingBuffer</BeanType>
                 <Name>Tx1</Name>
                 <CompNumb>78</CompNumb>
@@ -32484,9 +32484,9 @@
               <UserReadOnly>false</UserReadOnly>
               <Index>0</Index>
               <RegCompType>RingBuffer</RegCompType>
-              <RegCompRepository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</RegCompRepository>
+              <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
               <InheritedComponentState>
-                <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+                <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
                 <BeanType>RingBuffer</BeanType>
                 <Name>Rx1</Name>
                 <CompNumb>79</CompNumb>
@@ -34835,7 +34835,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Wait</BeanType>
     <Name>WAIT1</Name>
     <CompNumb>44</CompNumb>
@@ -35034,7 +35034,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Utility</BeanType>
     <Name>UTIL1</Name>
     <CompNumb>56</CompNumb>
@@ -35811,7 +35811,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>KinetisSDK</BeanType>
     <Name>KSDK1</Name>
     <CompNumb>49</CompNumb>
@@ -35852,7 +35852,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>HardFault</BeanType>
     <Name>HF1</Name>
     <CompNumb>48</CompNumb>
@@ -35894,7 +35894,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>CriticalSection</BeanType>
     <Name>CS1</Name>
     <CompNumb>47</CompNumb>
@@ -35974,7 +35974,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>KinetisTools</BeanType>
     <Name>KIN1</Name>
     <CompNumb>59</CompNumb>

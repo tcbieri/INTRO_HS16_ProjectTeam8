@@ -7,6 +7,7 @@
   */
 
 #include "Platform.h"
+#include "Application.h"
 #if PL_CONFIG_HAS_TIMER
 #include "Timer.h"
 #if PL_CONFIG_HAS_EVENTS
@@ -19,9 +20,27 @@
   #include "Tacho.h"
 #endif
 
+
+
+
 void TMR_OnInterrupt(void) {
   /* this one gets called from an interrupt!!!! */
-  /*! \todo Add code for a blinking LED here */
+	static uint8_t counter = 0;
+
+	counter++;
+
+	if(counter>=100){
+		counter = 0;
+
+		EVNT_SetEvent(EVNT_LED_HEARTBEAT);
+
+		/*
+		  LED1_Neg();
+		  LED2_Neg();
+		  LED3_Neg();	// Toggle LEDs
+		  */
+	}
+
 }
 
 void TMR_Init(void) {

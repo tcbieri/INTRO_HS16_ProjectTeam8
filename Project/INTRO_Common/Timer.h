@@ -10,10 +10,12 @@
 #define TIMER_H_
 
 #include "Platform.h"
+#include "LED.h"
 #if PL_CONFIG_HAS_TIMER
 
-#define TMR_TICK_MS  1
+#define TMR_TICK_MS  10
   /*!< we get called every TMR_TICK_MS ms */
+
 
 /*! \brief Function called from timer interrupt every TMR_TICK_MS. */
 void TMR_OnInterrupt(void);

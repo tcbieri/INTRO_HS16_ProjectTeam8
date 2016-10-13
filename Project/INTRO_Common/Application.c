@@ -103,37 +103,6 @@ static void APP_AdoptToHardware(void) {
 #endif
 }
 
-int waittime = 50;
-
-static void Critical(void){
-	CS1_CriticalVariable();
-
-	CS1_EnterCritical();
-	if(waittime ==1000){
-		waittime = 49;
-	}
-	if(waittime ==54){
-				waittime = 1000;
-			}
-		if(waittime ==53){
-			waittime = 54;
-		}
-
-	if(waittime ==52){
-			waittime = 53;
-		}
-	if(waittime ==51){
-		waittime = 52;
-	}
-	if(waittime ==50){
-		waittime = 51;
-	}
-	if(waittime ==49){
-			waittime = 50;
-		}
-
-	CS1_ExitCritical();
-}
 
 void APP_Start(void) {
 #if PL_CONFIG_HAS_RTOS
@@ -161,12 +130,7 @@ void APP_Start(void) {
     EVNT_HandleEvent(APP_EventHandler, TRUE);
 #endif
 
-    LED1_Neg();
-    LED2_Neg();
-    LED3_Neg();	// Toggle LEDs
-
-    WAIT1_Waitms(waittime);/* just wait for some arbitrary time .... */
-    Critical();
+    WAIT1_Waitms(100);/* just wait for some arbitrary time .... */
   }
 #endif
 }
