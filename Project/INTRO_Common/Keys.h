@@ -39,6 +39,10 @@ typedef enum {
   KEY_BTN_LAST /*!< must be last */
 } KEY_Buttons;
 
+
+
+
+
 #if PL_CONFIG_NOF_KEYS>=1
   #include "SW1.h"
 

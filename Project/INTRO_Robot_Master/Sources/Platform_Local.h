@@ -25,7 +25,7 @@
   #define PL_LOCAL_CONFIG_KEY_4_ISR         (0) /* if SW4 is using interrupts */
   #define PL_LOCAL_CONFIG_KEY_5_ISR         (0) /* if SW5 is using interrupts */
   #define PL_LOCAL_CONFIG_KEY_6_ISR         (0) /* if SW6 is using interrupts */
-  #define PL_LOCAL_CONFIG_KEY_7_ISR         (1) /* if SW7 is using interrupts */
+  #define PL_LOCAL_CONFIG_KEY_7_ISR         (0) /* if SW7 is using interrupts */
 #endif
 
 /* set of defines to disable a functionality: if it is defined, it will disable it in the common part */

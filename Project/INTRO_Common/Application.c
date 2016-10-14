@@ -43,25 +43,95 @@ void APP_EventHandler(EVNT_Handle event) {
   switch(event) {
   case EVNT_STARTUP:
     LED1_On(); /* just do something */
-#if PL_CONFIG_HAS_BUZZER
+	#if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_WELCOME);
-#endif
+	#endif
     break;
+
   case EVNT_LED_HEARTBEAT:
     LED1_Neg();
     break;
 
 #if PL_CONFIG_HAS_KEYS
-  #if PL_CONFIG_NOF_KEYS>=1
+
+#if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
     LED2_Neg();
     //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
-    SHELL_SendString("SW1 pressed\r\n");
+    //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
     break;
-  #endif
+#endif
+
+#if PL_CONFIG_NOF_KEYS>=2
+  case EVNT_SW2_PRESSED:
+     LED2_Neg();
+     //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+     //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
+     #if PL_CONFIG_HAS_BUZZER
+     BUZ_PlayTune(BUZ_TUNE_BUTTON);
+     #endif
+     break;
+#endif
+
+#if PL_CONFIG_NOF_KEYS>=3
+  case EVNT_SW3_PRESSED:
+    LED2_Neg();
+    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
+    #if PL_CONFIG_HAS_BUZZER
+    BUZ_PlayTune(BUZ_TUNE_BUTTON);
+    #endif
+    break;
+#endif
+
+#if PL_CONFIG_NOF_KEYS>=4
+  case EVNT_SW4_PRESSED:
+    LED2_Neg();
+    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
+    #if PL_CONFIG_HAS_BUZZER
+    BUZ_PlayTune(BUZ_TUNE_BUTTON);
+    #endif
+    break;
+#endif
+
+
+#if PL_CONFIG_NOF_KEYS>=5
+  case EVNT_SW5_PRESSED:
+    LED2_Neg();
+    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
+    #if PL_CONFIG_HAS_BUZZER
+    BUZ_PlayTune(BUZ_TUNE_BUTTON);
+    #endif
+    break;
+#endif
+
+#if PL_CONFIG_NOF_KEYS>=6
+  case EVNT_SW6_PRESSED:
+    LED2_Neg();
+    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
+    #if PL_CONFIG_HAS_BUZZER
+    BUZ_PlayTune(BUZ_TUNE_BUTTON);
+    #endif
+    break;
+#endif
+
+#if PL_CONFIG_NOF_KEYS>=7
+  case EVNT_SW7_PRESSED:
+    LED2_Neg();
+    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
+    #if PL_CONFIG_HAS_BUZZER
+    BUZ_PlayTune(BUZ_TUNE_BUTTON);
+    #endif
+    break;
+#endif
+
 #endif /* PL_CONFIG_HAS_KEYS */
 
     /* \todo extend handler as needed */

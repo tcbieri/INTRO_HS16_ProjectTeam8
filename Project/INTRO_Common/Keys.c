@@ -19,10 +19,14 @@
 #if PL_CONFIG_BOARD_IS_ROBO_V2
   #include "PORT_PDD.h"
 #endif
-#include "FreeRTOSConfig.h"
-#if configUSE_SEGGER_SYSTEM_VIEWER_HOOKS
-  #include "SYS1.h"
+
+#if PL_CONFIG_HAS_RTOS
+  	#include "FreeRTOSConfig.h"
+	#if configUSE_SEGGER_SYSTEM_VIEWER_HOOKS
+		#include "SYS1.h"
+	#endif
 #endif
+
 
 void KEY_Scan(void) {
   #if PL_CONFIG_NOF_KEYS >= 1 && !PL_CONFIG_KEY_1_ISR
@@ -30,7 +34,44 @@ void KEY_Scan(void) {
       EVNT_SetEvent(EVNT_SW1_PRESSED);
     }
   #endif
-    /*! \todo check handling all keys */
+
+#if PL_CONFIG_NOF_KEYS >= 2 && !PL_CONFIG_KEY_2_ISR
+    if (KEY2_Get()) { /* key pressed */
+      EVNT_SetEvent(EVNT_SW2_PRESSED);
+    }
+  #endif
+
+#if PL_CONFIG_NOF_KEYS >= 3 && !PL_CONFIG_KEY_3_ISR
+    if (KEY3_Get()) { /* key pressed */
+      EVNT_SetEvent(EVNT_SW3_PRESSED);
+    }
+  #endif
+
+#if PL_CONFIG_NOF_KEYS >= 4 && !PL_CONFIG_KEY_4_ISR
+    if (KEY4_Get()) { /* key pressed */
+      EVNT_SetEvent(EVNT_SW4_PRESSED);
+    }
+  #endif
+
+#if PL_CONFIG_NOF_KEYS >= 5 && !PL_CONFIG_KEY_5_ISR
+    if (KEY5_Get()) { /* key pressed */
+      EVNT_SetEvent(EVNT_SW5_PRESSED);
+    }
+  #endif
+
+#if PL_CONFIG_NOF_KEYS >= 6 && !PL_CONFIG_KEY_6_ISR
+    if (KEY6_Get()) { /* key pressed */
+      EVNT_SetEvent(EVNT_SW6_PRESSED);
+    }
+  #endif
+
+
+#if PL_CONFIG_NOF_KEYS >= 7 && !PL_CONFIG_KEY_7_ISR
+    if (KEY7_Get()) { /* key pressed */
+      EVNT_SetEvent(EVNT_SW7_PRESSED);
+    }
+  #endif
+    /*! \todo check handling all keys */  //done
 }
 
 void KEY_EnableInterrupts(void) {
