@@ -57,7 +57,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
     LED2_Neg();
-    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
     //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
@@ -68,7 +68,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=2
   case EVNT_SW2_PRESSED:
      LED2_Neg();
-     //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+     CLS1_SendStr("SW2 pressed\r\n", CLS1_GetStdio()->stdOut);
      //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
      #if PL_CONFIG_HAS_BUZZER
      BUZ_PlayTune(BUZ_TUNE_BUTTON);
@@ -79,7 +79,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=3
   case EVNT_SW3_PRESSED:
     LED2_Neg();
-    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    CLS1_SendStr("SW3 pressed\r\n", CLS1_GetStdio()->stdOut);
     //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
@@ -90,7 +90,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=4
   case EVNT_SW4_PRESSED:
     LED2_Neg();
-    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    CLS1_SendStr("SW4 pressed\r\n", CLS1_GetStdio()->stdOut);
     //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
@@ -102,7 +102,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=5
   case EVNT_SW5_PRESSED:
     LED2_Neg();
-    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    CLS1_SendStr("SW5 pressed\r\n", CLS1_GetStdio()->stdOut);
     //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
@@ -113,7 +113,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=6
   case EVNT_SW6_PRESSED:
     LED2_Neg();
-    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    CLS1_SendStr("SW6 pressed\r\n", CLS1_GetStdio()->stdOut);
     //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
@@ -124,7 +124,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=7
   case EVNT_SW7_PRESSED:
     LED2_Neg();
-    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    CLS1_SendStr("SW7 pressed\r\n", CLS1_GetStdio()->stdOut);
     //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);

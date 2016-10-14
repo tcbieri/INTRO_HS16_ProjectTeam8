@@ -11,7 +11,11 @@
 #include "Shell.h"
 #include "CLS1.h"
 #include "Application.h"
-#include "FRTOS1.h"
+
+#if PL_CONFIG_HAS_RTOS
+	#include "FRTOS1.h"
+#endif
+
 #if PL_CONFIG_HAS_BLUETOOTH
   #include "BT1.h"
 #endif
@@ -211,6 +215,7 @@ void SHELL_ParseCmd(unsigned char *cmd) {
   /* \todo Extend as needed */
 }
 
+#if PL_CONFIG_HAS_RTOS
 static void ShellTask(void *pvParameters) {
   /* \todo Extend as needed */
 #define DEFAULT_BUF_SIZE 48
@@ -282,6 +287,7 @@ static void ShellTask(void *pvParameters) {
     FRTOS1_vTaskDelay(10/portTICK_PERIOD_MS);
   } /* for */
 }
+#endif
 
 void SHELL_Init(void) {
   SHELL_val = 0;
