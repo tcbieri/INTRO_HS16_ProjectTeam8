@@ -13,7 +13,7 @@
 #include "LED.h"
 #if PL_CONFIG_HAS_TIMER
 
-#define TMR_TICK_MS  10
+#define TMR_TICK_MS  1
   /*!< we get called every TMR_TICK_MS ms */
 
 

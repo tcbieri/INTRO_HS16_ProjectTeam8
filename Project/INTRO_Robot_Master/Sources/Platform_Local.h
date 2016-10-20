@@ -16,7 +16,7 @@
 
 /* platform hardware configuration */
 #define PL_LOCAL_CONFIG_NOF_LEDS          (2) /* number of LEDs, 0 to 3 */  //Kusi changed from 0 to 2
-#define PL_LOCAL_CONFIG_NOF_KEYS          (0) /* number of keys, 0 to 7 */
+#define PL_LOCAL_CONFIG_NOF_KEYS          (1) /* number of keys, 0 to 7 */
 
 #if PL_LOCAL_CONFIG_NOF_KEYS>0
   #define PL_LOCAL_CONFIG_KEY_1_ISR         (0) /* if SW1 is using interrupts */
@@ -32,11 +32,11 @@
 //#define PL_LOCAL_CONFIG_HAS_LEDS_DISABLED                 /* disable LEDs */   //Change by Kusi
 //#define PL_LOCAL_CONFIG_HAS_EVENTS_DISABLED               /* disable events */
 //#define PL_LOCAL_CONFIG_HAS_TIMER_DISABLED                /* disable own timer */
-#define PL_LOCAL_CONFIG_HAS_KEYS_DISABLED                 /* disable key/push buttons */
-#define PL_LOCAL_CONFIG_HAS_TRIGGER_DISABLED              /* disable triggers */
+//#define PL_LOCAL_CONFIG_HAS_KEYS_DISABLED                 /* disable key/push buttons */
+//#define PL_LOCAL_CONFIG_HAS_TRIGGER_DISABLED              /* disable triggers */
 #define PL_LOCAL_CONFIG_HAS_DEBOUNCE_DISABLED             /* disable debouncing */
 #define PL_LOCAL_CONFIG_HAS_RTOS_DISABLED                 /* disable RTOS usage */
-#define PL_LOCAL_CONFIG_HAS_SHELL_DISABLED                /* disable shell */
+//#define PL_LOCAL_CONFIG_HAS_SHELL_DISABLED                /* disable shell */
 #define PL_LOCAL_CONFIG_HAS_SEGGER_RTT_DISABLED           /* disable Segger RTT */
 #define PL_LOCAL_CONFIG_HAS_SHELL_QUEUE_DISABLED          /* disable shell queue */
 #define PL_LOCAL_CONFIG_HAS_SQUEUE_SINGLE_CHAR_DISABLED   /* disable single character support in shell queue */
@@ -66,6 +66,6 @@
 #define PL_LOCAL_CONFIG_HAS_LINE_FOLLOW_DISABLED          /* disable line following */
 #define PL_LOCAL_CONFIG_HAS_LINE_MAZE_DISABLED            /* disable maze solving */
 #define PL_LOCAL_CONFIG_HAS_BLUETOOTH_DISABLED            /* disable Bluetooth */
-#define PL_LOCAL_CONFIG_HAS_BUZZER_DISABLED               /* disable buzzer (only on robot) */
+//#define PL_LOCAL_CONFIG_HAS_BUZZER_DISABLED               /* disable buzzer (only on robot) */
 
 #endif /* SOURCES_PLATFORM_LOCAL_H_ */

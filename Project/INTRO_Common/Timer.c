@@ -25,15 +25,17 @@
 
 void TMR_OnInterrupt(void) {
   /* this one gets called from an interrupt!!!! */
+
+	//EVNT_SetEvent(EVNT_TRIGGER_TICK);
+
 	static uint8_t counter = 0;
 
 	counter++;
 
-	if(counter>=100){
+	if(counter>=1000){
 		counter = 0;
 
 		EVNT_SetEvent(EVNT_LED_HEARTBEAT);
-
 	}
 
 }

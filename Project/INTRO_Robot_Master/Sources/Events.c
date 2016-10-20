@@ -70,6 +70,7 @@ void Cpu_OnNMIINT(void)
 */
 void TI1_OnInterrupt(void)
 {
+	TRG_AddTick();
 	TMR_OnInterrupt();
 }
 

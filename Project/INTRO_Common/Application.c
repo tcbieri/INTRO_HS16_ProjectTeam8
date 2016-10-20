@@ -49,16 +49,16 @@ void APP_EventHandler(EVNT_Handle event) {
     break;
 
   case EVNT_LED_HEARTBEAT:
-    LED1_Neg();
-    break;
+	  LED1_Neg();
+	  break;
 
 #if PL_CONFIG_HAS_KEYS
 
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
     LED2_Neg();
-    CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
-    //SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
+    //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
+    SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
