@@ -28,7 +28,7 @@ void TMR_OnInterrupt(void) {
 
 	//EVNT_SetEvent(EVNT_TRIGGER_TICK);
 
-	static uint8_t counter = 0;
+	static uint16_t counter = 0;
 
 	counter++;
 
