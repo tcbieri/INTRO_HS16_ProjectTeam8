@@ -218,9 +218,12 @@ void KEYDBNC_Process(void) {
     KEY_DisableInterrupts(); /* disable interrupts for all keys */
   #endif
 
-    if(KEYDBNC_FSMdata.state == DBNC_KEY_IDLE && KEYDBNC_GetKeys() != 0)
-    {
-    	DBNC_Process(&KEYDBNC_FSMdata); /* starts the state machine */
+    if(KEYDBNC_FSMdata.state == DBNC_KEY_IDLE){
+    	if(KEYDBNC_GetKeys() != 0)
+    	{
+    		DBNC_Process(&KEYDBNC_FSMdata); /* starts the state machine */
+    	}
+
     }
   }
 }

@@ -3,7 +3,7 @@
   <Header>
     <Name>INTRO_FRDM_Master</Name>
     <SavedBy>Erich Styger Local</SavedBy>
-    <ModificationStamp>11</ModificationStamp>
+    <ModificationStamp>14</ModificationStamp>
     <Date>2016-09-20</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1550-0615</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>98</ProjectCompNumb>
+    <ProjectCompNumb>99</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -4527,9 +4527,9 @@
       <ItemId23>49</ItemId23>
       <Value23>true</Value23>
       <ItemId24>50</ItemId24>
-      <Value24>true</Value24>
+      <Value24>false</Value24>
       <ItemId25>52</ItemId25>
-      <Value25>true</Value25>
+      <Value25>false</Value25>
       <ItemId26>53</ItemId26>
       <Value26>true</Value26>
       <ItemId27>55</ItemId27>
@@ -4545,7 +4545,7 @@
       <ItemId32>60</ItemId32>
       <Value32>false</Value32>
       <ItemId33>62</ItemId33>
-      <Value33>false</Value33>
+      <Value33>true</Value33>
       <ItemId34>73</ItemId34>
       <Value34>false</Value34>
       <ItemId35>75</ItemId35>
@@ -15247,7 +15247,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>RNet</BeanType>
     <Name>RNET1</Name>
     <CompNumb>31</CompNumb>
@@ -15561,7 +15561,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>nRF24L01</BeanType>
     <Name>RF1</Name>
     <CompNumb>32</CompNumb>
@@ -21442,7 +21442,7 @@
     <BeanType>TimerInt</BeanType>
     <Name>TI1</Name>
     <CompNumb>50</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>TMRCNTR</IconName>
     <UserFolderName />
@@ -21763,7 +21763,7 @@
               <ItemSymbol>IntPeriodTmg</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>init:10 ms;prec:5%;RTS:none;clksrc_presc[SpeedMode0]Auto select;clksrc_presc[SpeedMode1]Auto select;clksrc_presc[SpeedMode2]Auto select;clksrc_presc[SpeedMode3]Auto select;clksrc_presc[SpeedMode4]Auto select;clksrc_presc[SpeedMode5]Auto select;clksrc_presc[SpeedMode6]Auto select;clksrc_presc[SpeedMode7]Auto select</Value>
+              <Value>10 ms</Value>
               <RuntimeSetting>0</RuntimeSetting>
               <ReqDevPrescHigh>-1</ReqDevPrescHigh>
               <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -21918,7 +21918,7 @@
               <ItemSymbol>Config</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>0</Value>
+              <Value />
             </ItemState>
             <ItemState>
               <ItemSymbol>RefComp</ItemSymbol>
@@ -22368,7 +22368,7 @@
     <BeanType>TimerUnit_LDD</BeanType>
     <Name>TU1</Name>
     <CompNumb>52</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>CLOCKS_LDD</IconName>
     <UserFolderName />
@@ -22712,9 +22712,187 @@
       <ItemState>
         <ItemSymbol>ChannelList</ItemSymbol>
         <ReadOnly>false</ReadOnly>
-        <ListItemCount>1</ListItemCount>
+        <ListItemCount>0</ListItemCount>
         <UserReadOnly>false</UserReadOnly>
         <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>_InitGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>InitEnable</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>AutoInitializationGrp</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>AutoInitialization</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>EventMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OnCounterRestartInitMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OnChannel0InitMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OnChannel1InitMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OnChannel2InitMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OnChannel3InitMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OnChannel4InitMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OnChannel5InitMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OnChannel6InitMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OnChannel7InitMask</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ClockConfigGrp</ItemSymbol>
+        <ListItemCount>1</ListItemCount>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>_SpeedGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SpeedMode0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SpeedMode1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SpeedMode2</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SpeedMode3</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SpeedMode4</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SpeedMode5</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SpeedMode6</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SpeedMode7</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>Channel0</ItemSymbol>
@@ -22938,184 +23116,6 @@
         <ItemSymbol>ChannelCapIntISRHandle0</ItemSymbol>
         <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>_InitGrp</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>InitEnable</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>AutoInitializationGrp</ItemSymbol>
-        <ListItemCount>1</ListItemCount>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>AutoInitialization</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>EventMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>OnCounterRestartInitMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>OnChannel0InitMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>OnChannel1InitMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>OnChannel2InitMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>OnChannel3InitMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>OnChannel4InitMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>OnChannel5InitMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>OnChannel6InitMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>OnChannel7InitMask</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ClockConfigGrp</ItemSymbol>
-        <ListItemCount>1</ListItemCount>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>_SpeedGrp</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SpeedMode0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SpeedMode1</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SpeedMode2</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SpeedMode3</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SpeedMode4</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SpeedMode5</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SpeedMode6</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SpeedMode7</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
       </ItemState>
     </Properties>
     <Methods>
@@ -23388,10 +23388,10 @@
         <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>true</Value>
-        <Expanded>true</Expanded>
+        <Value>false</Value>
+        <Expanded>false</Expanded>
         <LastSelection>true</LastSelection>
-        <LastUserSel>yes</LastUserSel>
+        <LastUserSel>never</LastUserSel>
       </ItemState>
       <ItemState>
         <ItemSymbol>OnChannel0Name</ItemSymbol>
@@ -26336,7 +26336,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Shell</BeanType>
     <Name>CLS1</Name>
     <CompNumb>55</CompNumb>
@@ -26916,7 +26916,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>SeggerRTT</BeanType>
     <Name>RTT1</Name>
     <CompNumb>58</CompNumb>
@@ -27322,7 +27322,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>SeggerSystemView</BeanType>
     <Name>SYS1</Name>
     <CompNumb>57</CompNumb>
@@ -29622,11 +29622,11 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>FreeRTOS</BeanType>
     <Name>FRTOS1</Name>
     <CompNumb>62</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>FreeRTOS</IconName>
     <UserFolderName />
@@ -30253,7 +30253,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>100</Value>
+        <Value>1000</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -30395,7 +30395,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>2048</Value>
+        <Value>4096</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -32060,7 +32060,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Timeout</BeanType>
     <Name>TMOUT1</Name>
     <CompNumb>73</CompNumb>
@@ -32204,7 +32204,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>FSL_USB_Stack</BeanType>
     <Name>USB1</Name>
     <CompNumb>75</CompNumb>
@@ -32255,9 +32255,9 @@
         <UserReadOnly>false</UserReadOnly>
         <Index>0</Index>
         <RegCompType>FSL_USB_CDC_Device</RegCompType>
-        <RegCompRepository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</RegCompRepository>
+        <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
         <InheritedComponentState>
-          <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+          <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
           <BeanType>FSL_USB_CDC_Device</BeanType>
           <Name>CDC1</Name>
           <CompNumb>77</CompNumb>
@@ -32404,9 +32404,9 @@
               <UserReadOnly>false</UserReadOnly>
               <Index>0</Index>
               <RegCompType>RingBuffer</RegCompType>
-              <RegCompRepository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</RegCompRepository>
+              <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
               <InheritedComponentState>
-                <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+                <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
                 <BeanType>RingBuffer</BeanType>
                 <Name>Tx1</Name>
                 <CompNumb>78</CompNumb>
@@ -32709,9 +32709,9 @@
               <UserReadOnly>false</UserReadOnly>
               <Index>0</Index>
               <RegCompType>RingBuffer</RegCompType>
-              <RegCompRepository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</RegCompRepository>
+              <RegCompRepository>file:/${home_ProcessorExpert_loc}/MyComponents</RegCompRepository>
               <InheritedComponentState>
-                <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+                <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
                 <BeanType>RingBuffer</BeanType>
                 <Name>Rx1</Name>
                 <CompNumb>79</CompNumb>
@@ -35060,7 +35060,7 @@
     </Events>
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Wait</BeanType>
     <Name>WAIT1</Name>
     <CompNumb>44</CompNumb>
@@ -35259,7 +35259,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>Utility</BeanType>
     <Name>UTIL1</Name>
     <CompNumb>56</CompNumb>
@@ -36036,7 +36036,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>KinetisSDK</BeanType>
     <Name>KSDK1</Name>
     <CompNumb>49</CompNumb>
@@ -36077,7 +36077,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>HardFault</BeanType>
     <Name>HF1</Name>
     <CompNumb>48</CompNumb>
@@ -36119,7 +36119,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>CriticalSection</BeanType>
     <Name>CS1</Name>
     <CompNumb>47</CompNumb>
@@ -36199,7 +36199,7 @@
     <Events />
   </Bean>
   <Bean>
-    <Repository>file://Users/kevinbieri/Documents/KBI_CLOUD/INTRO/ProcessorExpert</Repository>
+    <Repository>file:/${home_ProcessorExpert_loc}/MyComponents</Repository>
     <BeanType>KinetisTools</BeanType>
     <Name>KIN1</Name>
     <CompNumb>59</CompNumb>

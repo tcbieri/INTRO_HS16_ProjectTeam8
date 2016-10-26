@@ -3,7 +3,7 @@
   <Header>
     <Name>INTRO_Remote_Master</Name>
     <SavedBy>Erich Styger Local</SavedBy>
-    <ModificationStamp>10</ModificationStamp>
+    <ModificationStamp>13</ModificationStamp>
     <Date>2016-09-20</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1550-0615</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>136</ProjectCompNumb>
+    <ProjectCompNumb>144</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -5366,7 +5366,7 @@
     <BoolList_BeanConfig>
       <Count>41</Count>
       <ItemId0>5</ItemId0>
-      <Value0>false</Value0>
+      <Value0>true</Value0>
       <ItemId1>7</ItemId1>
       <Value1>true</Value1>
       <ItemId2>8</ItemId2>
@@ -5516,7 +5516,7 @@
     <BeanType>FreeRTOS</BeanType>
     <Name>FRTOS1</Name>
     <CompNumb>5</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>FreeRTOS</IconName>
     <UserFolderName />
@@ -6285,8 +6285,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>8000</Value>
-        <Base>HEX</Base>
+        <Value>4096</Value>
+        <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>ApplicationAllocatedHeap</ItemSymbol>
@@ -54461,7 +54461,7 @@
         <ItemSymbol>_Tmg</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>10 ms</Value>
+        <Value>1 ms</Value>
         <RuntimeSetting>0</RuntimeSetting>
         <ReqDevPrescHigh>-1</ReqDevPrescHigh>
         <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -54487,7 +54487,7 @@
         <ReqSrcClkPrescSpeedMode5>-1</ReqSrcClkPrescSpeedMode5>
         <ReqSrcClkPrescSpeedMode6>-1</ReqSrcClkPrescSpeedMode6>
         <ReqSrcClkPrescSpeedMode7>-1</ReqSrcClkPrescSpeedMode7>
-        <InitValue>10 ms</InitValue>
+        <InitValue>1 ms</InitValue>
         <Precision>5.0</Precision>
         <PrecInProc>true</PrecInProc>
         <LowLimit />
@@ -54673,7 +54673,6 @@
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
               <Index>0</Index>
               <Value>true</Value>
             </ItemState>
@@ -54707,7 +54706,7 @@
               <ReqSrcClkPrescSpeedMode5>-1</ReqSrcClkPrescSpeedMode5>
               <ReqSrcClkPrescSpeedMode6>-1</ReqSrcClkPrescSpeedMode6>
               <ReqSrcClkPrescSpeedMode7>-1</ReqSrcClkPrescSpeedMode7>
-              <InitValue>10 ms</InitValue>
+              <InitValue>1 ms</InitValue>
               <Precision>5.0</Precision>
               <PrecInProc>true</PrecInProc>
               <LowLimit />
@@ -55511,7 +55510,7 @@
         <ReqSrcClkPrescSpeedMode5>-1</ReqSrcClkPrescSpeedMode5>
         <ReqSrcClkPrescSpeedMode6>-1</ReqSrcClkPrescSpeedMode6>
         <ReqSrcClkPrescSpeedMode7>-1</ReqSrcClkPrescSpeedMode7>
-        <InitValue>10 ms</InitValue>
+        <InitValue>1 ms</InitValue>
         <Precision>5.0</Precision>
         <PrecInProc>true</PrecInProc>
         <LowLimit />
