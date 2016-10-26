@@ -29,6 +29,9 @@
 
 
 void KEY_Scan(void) {
+#if PL_CONFIG_HAS_DEBOUNCE
+	KEYDBNC_Process();
+#else
   #if PL_CONFIG_NOF_KEYS >= 1 && !PL_CONFIG_KEY_1_ISR
     if (KEY1_Get()) { /* key pressed */
       EVNT_SetEvent(EVNT_SW1_PRESSED);
@@ -72,6 +75,7 @@ void KEY_Scan(void) {
     }
   #endif
     /*! \todo check handling all keys */  //done
+#endif
 }
 
 void KEY_EnableInterrupts(void) {
