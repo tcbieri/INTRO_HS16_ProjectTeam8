@@ -6,3 +6,4 @@
 *.g_x
 ProjectInfo.xml
 .cwGeneratedFileSetLog
+/Project_Settings/Debugger/INTRO_FRDM_Master_Debug_Segger.launch
