@@ -221,10 +221,20 @@ static uint32_t SHELL_val; /* used as demo value for shell */
 void SHELL_SendString(unsigned char *msg) {
 #if PL_CONFIG_HAS_SHELL_QUEUE
   SQUEUE_SendString(msg);
+  // Todo: Ask Styger Multiport output for Key pressed
+//#elif SHELL_HANDLER_ARRAY
+//  uint8_t i;
+//  /* initialize buffers */
+//  for(i=0;i<sizeof(ios)/sizeof(ios[0]);i++) {
+//	  //CLS1_SendStr(msg, (CLS1_ConstStdIOTypePtr) ios[i].stdio);
+//	  CLS1_SendStr(msg, ios[i].stdio);
+//  }
 #elif CLS1_DEFAULT_SERIAL
   CLS1_SendStr(msg, CLS1_GetStdio()->stdOut);
 #else
+
 #endif
+
 }
 
 /*!
