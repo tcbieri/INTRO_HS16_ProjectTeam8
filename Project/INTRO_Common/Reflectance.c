@@ -36,8 +36,14 @@
 #define REF_USE_WHITE_LINE    0  /* if set to 1, then the robot is using a white (on black) line, otherwise a black (on white) line */
 
 #define REF_START_STOP_CALIB      1 /* start/stop calibration commands */
+#define REF_MUTEX_MEASURE_RAW 	1
+
 #if REF_START_STOP_CALIB
   static xSemaphoreHandle REF_StartStopSem = NULL;
+#endif
+
+#if REF_MUTEX_MEASURE_RAW
+  static xSemaphoreHandle REF_Mutex_Measure_Raw = NULL;
 #endif
 
 typedef enum {
@@ -140,16 +146,27 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
   uint8_t cnt; /* number of sensor */
   uint8_t i;
   RefCnt_TValueType timerVal;
-  /*! \todo Consider reentrancy and mutual exclusion! */
+  CS1_CriticalVariable();
+  /*! \done: Consider reentrancy and mutual exclusion! */
 
-  LED_IR_On(); /* IR LED's on */
+ if(FRTOS1_xSemaphoreTake(REF_Mutex_Measure_Raw, portMAX_DELAY)==pdPASS){
+
+//Kusi changed:
+	 //Application.c / eventhandler, added Start Calibration
+	 //CLS1.h / Zeile 198 Default Serial ausgeschaltet
+
+
+  LED_IR_On();/* IR LED's on */
   WAIT1_Waitus(200);
   for(i=0;i<REF_NOF_SENSORS;i++) {
     SensorFctArray[i].SetOutput(); /* turn I/O line as output */
     SensorFctArray[i].SetVal(); /* put high */
     raw[i] = MAX_SENSOR_VALUE;
   }
-  WAIT1_Waitus(50); /* give at least 10 us to charge the capacitor */
+  WAIT1_Waitus(20); /* give at least 10 us to charge the capacitor */
+
+  CS1_EnterCritical();
+
   for(i=0;i<REF_NOF_SENSORS;i++) {
     SensorFctArray[i].SetInput(); /* turn I/O line as input */
   }
@@ -166,8 +183,15 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
         cnt++;
       }
     }
-  } while(cnt!=REF_NOF_SENSORS);
+    //done: Abbruchbedingung festlegen  sw. ist ca. 5500?, Abbruch auf ca. 8000
+  } while((cnt!=REF_NOF_SENSORS)||(timerVal>=8000));
+
+  CS1_ExitCritical();
+
   LED_IR_Off(); /* IR LED's off */
+
+  FRTOS1_xSemaphoreGive(REF_Mutex_Measure_Raw);
+ }
 }
 
 static void REF_CalibrateMinMax(SensorTimeType min[REF_NOF_SENSORS], SensorTimeType max[REF_NOF_SENSORS], SensorTimeType raw[REF_NOF_SENSORS]) {
@@ -520,7 +544,7 @@ static void REF_StateMachine(void) {
       }
 #endif
       break;
-    
+
     case REF_STATE_START_CALIBRATION:
       SHELL_SendString((unsigned char*)"start calibration...\r\n");
       for(i=0;i<REF_NOF_SENSORS;i++) {
@@ -570,11 +594,12 @@ bool REF_IsReady(void) {
   return refState==REF_STATE_READY;
 }
 
+
 static void ReflTask (void *pvParameters) {
   (void)pvParameters; /* not used */
   for(;;) {
     REF_StateMachine();
-    FRTOS1_vTaskDelay(10/portTICK_PERIOD_MS);
+    FRTOS1_vTaskDelay(50/portTICK_PERIOD_MS);
   }
 }
 
@@ -590,10 +615,22 @@ void REF_Init(void) {
   (void)FRTOS1_xSemaphoreTake(REF_StartStopSem, 0); /* empty token */
   FRTOS1_vQueueAddToRegistry(REF_StartStopSem, "RefStartStopSem");
 #endif
+
+#if REF_MUTEX_MEASURE_RAW
+  FRTOS1_vSemaphoreCreateBinary(REF_Mutex_Measure_Raw);
+  if (REF_Mutex_Measure_Raw==NULL) { /* semaphore creation failed */
+    for(;;){} /* error */
+  }
+  (void)FRTOS1_xSemaphoreTake(REF_Mutex_Measure_Raw, 0); /* empty token */
+  FRTOS1_vQueueAddToRegistry(REF_Mutex_Measure_Raw, "RefMutexMeasureRaw");
+  FRTOS1_xSemaphoreGive(REF_Mutex_Measure_Raw);
+#endif
+
+
   refState = REF_STATE_INIT;
   timerHandle = RefCnt_Init(NULL);
   /*! \todo You might need to adjust priority or other task settings */
-  if (FRTOS1_xTaskCreate(ReflTask, "Refl", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS) {
+  if (FRTOS1_xTaskCreate(ReflTask, "Refl", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS) {  //
     for(;;){} /* error */
   }
 }

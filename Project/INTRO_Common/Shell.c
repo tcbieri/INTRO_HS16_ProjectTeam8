@@ -293,13 +293,14 @@ static void ShellTask(void *pvParameters) {
   }
 #endif
   SHELL_SendString("Shell task stared!\r\n");
+
 #if CLS1_DEFAULT_SERIAL
   (void)CLS1_ParseWithCommandTable((unsigned char*)CLS1_CMD_HELP, ios[0].stdio, CmdParserTable);
 #endif
   for(;;) {
 #if SHELL_HANDLER_ARRAY
     /* process all I/Os */
-    for(i=0;i<sizeof(ios)/sizeof(ios[0]);i++) {
+    for(i=0;i<sizeof(ios)/sizeof(ios[0]);i++) {  //changed by Kusi
       (void)CLS1_ReadAndParseWithCommandTable(ios[i].buf, ios[i].bufSize, ios[i].stdio, CmdParserTable);
     }
 #endif

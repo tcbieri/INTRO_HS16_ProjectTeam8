@@ -14,6 +14,8 @@
 #include "CS1.h"
 #include "Keys.h"
 #include "KIN1.h"
+#include "Reflectance.h"  //added by Kusi
+
 #if PL_CONFIG_HAS_SHELL
   #include "CLS1.h"
 #endif
@@ -57,6 +59,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
     LED2_Neg();
+    REF_CalibrateStartStop(); //added by Kusi
     //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
     SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */
     #if PL_CONFIG_HAS_BUZZER
