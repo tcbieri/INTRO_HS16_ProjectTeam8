@@ -136,7 +136,7 @@ void REF_CalibrateStartStop(void) {
   }
 }
 #endif
-
+/*! \done: Consider reentrancy and mutual exclusion! */
 /*!
  * \brief Measures the time until the sensor discharges
  * \param raw Array to store the raw values.
@@ -147,14 +147,8 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
   uint8_t i;
   RefCnt_TValueType timerVal;
   CS1_CriticalVariable();
-  /*! \done: Consider reentrancy and mutual exclusion! */
 
  if(FRTOS1_xSemaphoreTake(REF_Mutex_Measure_Raw, portMAX_DELAY)==pdPASS){
-
-//Kusi changed:
-	 //Application.c / eventhandler, added Start Calibration
-	 //CLS1.h / Zeile 198 Default Serial ausgeschaltet
-
 
   LED_IR_On();/* IR LED's on */
   WAIT1_Waitus(200);
@@ -183,8 +177,8 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
         cnt++;
       }
     }
-    //done: Abbruchbedingung festlegen  sw. ist ca. 5500?, Abbruch auf ca. 8000
-  } while((cnt!=REF_NOF_SENSORS)||(timerVal>=8000));
+    //Abbruchbedingung festlegt; schwarz ist ca. 8800, Abbruch auf 14000
+  } while((cnt!=REF_NOF_SENSORS)&&(timerVal<=14000));
 
   CS1_ExitCritical();
 
@@ -193,6 +187,9 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
   FRTOS1_xSemaphoreGive(REF_Mutex_Measure_Raw);
  }
 }
+//Kusi changed:
+	 //Application.c / eventhandler, added Start Calibration
+	 //CLS1.h / Zeile 198 Default Serial ausgeschaltet
 
 static void REF_CalibrateMinMax(SensorTimeType min[REF_NOF_SENSORS], SensorTimeType max[REF_NOF_SENSORS], SensorTimeType raw[REF_NOF_SENSORS]) {
   int i;
@@ -617,7 +614,8 @@ void REF_Init(void) {
 #endif
 
 #if REF_MUTEX_MEASURE_RAW
-  FRTOS1_vSemaphoreCreateBinary(REF_Mutex_Measure_Raw);
+  //FRTOS1_vSemaphoreCreateBinary(REF_Mutex_Measure_Raw);
+  REF_Mutex_Measure_Raw = FRTOS1_xSemaphoreCreateMutex();
   if (REF_Mutex_Measure_Raw==NULL) { /* semaphore creation failed */
     for(;;){} /* error */
   }
