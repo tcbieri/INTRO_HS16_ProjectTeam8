@@ -161,8 +161,11 @@ static void APP_AdoptToHardware(void) {
 #if PL_CONFIG_HAS_MOTOR
   if (KIN1_UIDSame(&id, &RoboIDs[2])) { /* L4 */
     MOT_Invert(MOT_GetMotorHandle(MOT_MOTOR_LEFT), TRUE); /* revert left motor */
+
+    #if PL_CONFIG_HAS_QUADRATURE
     (void)Q4CLeft_SwapPins(TRUE);
     (void)Q4CRight_SwapPins(TRUE);
+	#endif
   }
 #endif
 #if PL_CONFIG_HAS_QUADRATURE && PL_CONFIG_BOARD_IS_ROBO_V2
