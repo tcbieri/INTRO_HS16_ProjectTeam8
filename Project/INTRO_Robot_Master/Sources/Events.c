@@ -100,6 +100,7 @@ void FRTOS1_vApplicationTickHook(void)
   /* Write your code here ... */
 	TRG_AddTick();
 	TMR_OnInterrupt();
+	TACHO_Sample();
 }
 
 /*

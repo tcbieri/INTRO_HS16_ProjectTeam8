@@ -40,6 +40,7 @@ int32_t TACHO_GetSpeed(bool isLeft) {
   }
 }
 
+
 void TACHO_CalcSpeed(void) {
   /*! \todo Implement/change function as needed, make sure implementation below matches your needs */
   /* we calculate the speed as follow:
@@ -116,7 +117,7 @@ void TACHO_Sample(void) {
  * \param io I/O channel to use for printing status
  */
 static void TACHO_PrintStatus(const CLS1_StdIOType *io) {
-  TACHO_CalcSpeed(); /*! \todo only temporary until this is done periodically */
+  //TACHO_CalcSpeed(); /*! \todo only temporary until this is done periodically */
   CLS1_SendStatusStr((unsigned char*)"Tacho", (unsigned char*)"\r\n", io->stdOut);
   CLS1_SendStatusStr((unsigned char*)"  L speed", (unsigned char*)"", io->stdOut);
   CLS1_SendNum32s(TACHO_GetSpeed(TRUE), io->stdOut);

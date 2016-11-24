@@ -17,6 +17,8 @@
  */
 int32_t TACHO_GetSpeed(bool isLeft);
 
+void TACHO_CheckTime(void);
+
 /*!
  * \brief Calculates the speed based on the position information from the encoder.
  */
