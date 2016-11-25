@@ -60,7 +60,11 @@ void APP_EventHandler(EVNT_Handle event) {
   case EVNT_SW1_PRESSED:
     LED2_Neg();
 #if PL_CONFIG_HAS_REFLECTANCE
-    REF_CalibrateStartStop(); //added by Kusi
+    //REF_CalibrateStartStop(); //added by Kusi
+#endif
+
+#if PL_CONFIG_HAS_LINE_FOLLOW
+    LF_StartStopFollowing();
 #endif
     //CLS1_SendStr("SW1 pressed\r\n", CLS1_GetStdio()->stdOut);
     SHELL_SendString("SW1 pressed\r\n");  /*\todo disabled shell */

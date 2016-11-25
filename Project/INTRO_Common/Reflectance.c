@@ -178,7 +178,7 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
       }
     }
     //Abbruchbedingung festlegt; schwarz ist ca. 8800, Abbruch auf 14000
-  } while((cnt!=REF_NOF_SENSORS)&&(timerVal<=14000));
+  } while((cnt!=REF_NOF_SENSORS)&&(timerVal<=50000));
 
   CS1_ExitCritical();
 

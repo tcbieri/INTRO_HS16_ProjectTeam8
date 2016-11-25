@@ -63,7 +63,7 @@
 //#define PL_LOCAL_CONFIG_HAS_PID_DISABLED                  /* disable PID */
 //#define PL_LOCAL_CONFIG_HAS_DRIVE_DISABLED                /* disable drive module */
 #define PL_LOCAL_CONFIG_HAS_TURN_DISABLED                 /* disable turning module */
-#define PL_LOCAL_CONFIG_HAS_LINE_FOLLOW_DISABLED          /* disable line following */
+//#define PL_LOCAL_CONFIG_HAS_LINE_FOLLOW_DISABLED          /* disable line following */
 #define PL_LOCAL_CONFIG_HAS_LINE_MAZE_DISABLED            /* disable maze solving */
 #define PL_LOCAL_CONFIG_HAS_BLUETOOTH_DISABLED            /* disable Bluetooth */
 //#define PL_LOCAL_CONFIG_HAS_BUZZER_DISABLED               /* disable buzzer (only on robot) */

@@ -113,6 +113,7 @@ static void StateMachine(void) {
       #endif /* PL_CONFIG_HAS_LINE_MAZE */
       break;
     case STATE_STOP:
+    	DRV_Stop(10);
       SHELL_SendString("Stopped!\r\n");
 #if PL_CONFIG_HAS_TURN
       TURN_Turn(TURN_STOP, NULL);
