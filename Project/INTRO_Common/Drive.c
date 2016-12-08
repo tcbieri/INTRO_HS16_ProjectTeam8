@@ -359,6 +359,12 @@ void DRV_Deinit(void) {
   FRTOS1_vQueueDelete(DRV_Queue);
 }
 
+void DRV_Reset(void){
+	Q4CLeft_SetPos(0);
+	Q4CRight_SetPos(0);
+	DRV_SetPos(0, 0);
+}
+
 void DRV_Init(void) {
   DRV_Status.mode = DRV_MODE_NONE;
   DRV_Status.speed.left = 0;

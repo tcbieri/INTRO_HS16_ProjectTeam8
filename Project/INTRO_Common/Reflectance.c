@@ -178,7 +178,7 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
       }
     }
     //Abbruchbedingung festlegt; schwarz ist ca. 8800, Abbruch auf 14000
-  } while((cnt!=REF_NOF_SENSORS)&&(timerVal<=50000));
+  } while((cnt!=REF_NOF_SENSORS)&&(timerVal<=3000));
 
   CS1_ExitCritical();
 
@@ -285,7 +285,7 @@ uint16_t REF_GetLineValue(void) {
 static REF_LineKind ReadLineKind(SensorTimeType val[REF_NOF_SENSORS]) {
   uint32_t sum, sumLeft, sumRight, outerLeft, outerRight;
   int i;
-  #define REF_MIN_LINE_VAL      0x60   /* minimum value indicating a line */
+  #define REF_MIN_LINE_VAL      0x40   /* minimum value indicating a line */  //changed by Kusi
 
   for(i=0;i<REF_NOF_SENSORS;i++) {
     if (val[i]<REF_MIN_LINE_VAL) { /* smaller value? White seen! */

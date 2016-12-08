@@ -443,31 +443,31 @@ void PID_Init(void) {
   /*! \todo determine your PID values */
   speedLeftConfig.pFactor100 = 2500;
   speedLeftConfig.iFactor100 = 100;
-  speedLeftConfig.dFactor100 = 20;
+  speedLeftConfig.dFactor100 = 50;  // vorher 20
   speedLeftConfig.iAntiWindup = 30000;
   speedLeftConfig.lastError = 0;
   speedLeftConfig.integral = 0;
 
   speedRightConfig.pFactor100 = 2500;
   speedRightConfig.iFactor100 = 100;
-  speedRightConfig.dFactor100 = 20;
+  speedRightConfig.dFactor100 = 50;  //vorher 20
   speedRightConfig.iAntiWindup = 30000;
   speedRightConfig.lastError = 0;
   speedRightConfig.integral = 0;
 
   lineFwConfig.pFactor100 = 6000;
-  lineFwConfig.iFactor100 = 200;
-  lineFwConfig.dFactor100 = 20;
+  lineFwConfig.iFactor100 = 50;  //vorher 200
+  lineFwConfig.dFactor100 = 50;  //vorher 20
   lineFwConfig.iAntiWindup = 30000;
   lineFwConfig.maxSpeedPercent = 20;
   lineFwConfig.lastError = 0;
   lineFwConfig.integral = 0;
 
   posLeftConfig.pFactor100 = 200;
-  posLeftConfig.iFactor100 = 100;
+  posLeftConfig.iFactor100 = 0;  //runter von 100 auf 0, keine Nachkorrektur
   posLeftConfig.dFactor100 = 20;
   posLeftConfig.iAntiWindup = 30000;
-  posLeftConfig.maxSpeedPercent = 100;
+  posLeftConfig.maxSpeedPercent = 30;   //runter von 100 auf 30
   posLeftConfig.lastError = 0;
   posLeftConfig.integral = 0;
   posRightConfig.pFactor100 = posLeftConfig.pFactor100;

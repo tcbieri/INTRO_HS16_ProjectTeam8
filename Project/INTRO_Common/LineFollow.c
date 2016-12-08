@@ -36,14 +36,32 @@ typedef enum {
   STATE_FOLLOW_SEGMENT,    /* line following segment, going forward */
   STATE_TURN,              /* reached an intersection, turning around */
   STATE_FINISHED,          /* reached finish area */
-  STATE_STOP               /* stop the engines */
+  STATE_STOP,				/* stop the engines */
+  STATE_STOP_CALM,
 } StateType;
+
+typedef enum{
+	STOP,
+	START,
+	BREAK,
+	FORWARD,
+	TURN,
+	BACK,
+	END
+}SwitchState;
+
 
 /* task notification bits */
 #define LF_START_FOLLOWING (1<<0)  /* start line following */
 #define LF_STOP_FOLLOWING  (1<<1)  /* stop line following */
 
+static void StateMachine2(void);
+static bool FollowSegment(void);
 static volatile StateType LF_currState = STATE_IDLE;
+static volatile SwitchState FSM_state = STOP; //added by Kusi
+static SwitchState FSM_state_save = START;  //store the current state
+uint16_t lostcounter = 0;
+bool writeflag = false;
 static xTaskHandle LFTaskHandle;
 #if PL_CONFIG_HAS_LINE_MAZE
 static uint8_t LF_solvedIdx = 0; /*  index to iterate through the solution, zero is the solution start index */
@@ -57,21 +75,132 @@ void LF_StopFollowing(void) {
   (void)xTaskNotify(LFTaskHandle, LF_STOP_FOLLOWING, eSetBits);
 }
 
-void LF_StartStopFollowing(void) {
-  if (LF_IsFollowing()) {
-    (void)xTaskNotify(LFTaskHandle, LF_STOP_FOLLOWING, eSetBits);
-  } else {
-    (void)xTaskNotify(LFTaskHandle, LF_START_FOLLOWING, eSetBits);
-  }
+void LF_StartStopFollowing(void){
+
+	if((FSM_state==FORWARD)||(FSM_state==BACK)||(FSM_state==START)){
+			(void)xTaskNotify(LFTaskHandle, LF_STOP_FOLLOWING, eSetBits);
+	}
+
+	if((FSM_state==STOP)||(FSM_state==END)||(FSM_state==BREAK)){
+		 (void)xTaskNotify(LFTaskHandle, LF_START_FOLLOWING, eSetBits);
+	}
 }
 
-static void StateMachine(void);
+//void LF_StartStopFollowing(void) {
+// if((FSM_state==START)||(FSM_state==BREAK)){  //changed by Kusi
+//	//if (LF_IsFollowing()) {
+//    (void)xTaskNotify(LFTaskHandle, LF_STOP_FOLLOWING, eSetBits);
+//  } else {
+//    (void)xTaskNotify(LFTaskHandle, LF_START_FOLLOWING, eSetBits);
+//  }
+//}
+
+void setBreak(void){
+	FSM_state = BREAK;
+}
+
+
+static void StateMachine2(void){
+	//case check stop
+
+	switch(FSM_state){
+
+	case STOP:
+		LF_currState = STATE_IDLE;
+		break;
+
+	//case START:
+		//FSM_state = FSM_state_save;  //go to saved state
+	//	break;
+
+	case BREAK:
+		if(writeflag==FALSE){
+			SHELL_SendString("BREAK!\r\n");
+			writeflag=TRUE;
+			LF_currState = STATE_STOP;
+		}
+
+		break;
+
+	case START:
+		FSM_state = FORWARD;
+		LF_currState = STATE_FOLLOW_SEGMENT;
+		FSM_state_save = START;  //save current state
+		break;
+
+	case FORWARD:
+		if(writeflag==FALSE){
+		SHELL_SendString("FORWARD!\r\n");
+		writeflag = TRUE;
+		}
+
+		if(LF_currState == STATE_IDLE)
+		{
+			FSM_state = TURN;
+			writeflag = FALSE;
+
+		}
+
+
+		break;
+
+	case TURN:
+		if(writeflag==FALSE){
+		SHELL_SendString("TURN!\r\n");
+		writeflag = TRUE;
+		LF_currState = STATE_TURN;
+		}
+		FSM_state_save = FSM_state;  //save current state
+
+		if(LF_currState == STATE_IDLE)
+		{
+			FSM_state = BACK;
+			writeflag = FALSE;
+		}
+		break;
+
+	case BACK:
+		if(writeflag==FALSE){
+		SHELL_SendString("BACK!\r\n");
+		writeflag = TRUE;
+		LF_currState = STATE_FOLLOW_SEGMENT;
+		}
+		FSM_state_save = FSM_state;  //save current state
+
+		if(LF_currState == STATE_IDLE)
+		{
+			FSM_state = END;
+			writeflag = FALSE;
+			DRV_Reset();
+			DRV_SetMode(DRV_MODE_POS);
+			DRV_SetPos(500, 500);
+		}
+		break;
+
+	case END:
+		if(writeflag == FALSE){
+		SHELL_SendString("END!\r\n");
+		writeflag = TRUE;
+		}
+		if(DRV_IsStopped())
+		{
+			FSM_state = STOP;
+			DRV_SetMode(DRV_MODE_NONE);
+		}
+		//(playtune!?)
+		break;
+
+	}/*end of switch*/
+}/*end of function*/
+
+
+//static void StateMachine(void);
 
 /*!
  * \brief follows a line segment.
  * \return Returns TRUE if still on line segment
  */
-static bool FollowSegment(void) {
+static bool FollowSegment(void){
   uint16_t currLine;
   REF_LineKind currLineKind;
 
@@ -104,7 +233,13 @@ static void StateMachine(void) {
     case STATE_TURN:
       #if PL_CONFIG_HAS_LINE_MAZE
       /*! \todo Handle maze turning */
-      #endif /* PL_CONFIG_HAS_LINE_MAZE */
+		#else
+    	TURN_TurnAngle(180, NULL);    //changed by Kusi
+    	TURN_Turn(TURN_STOP, NULL);	//changed by Kusi
+    	//FSM_state = BACK;  //changed by Kusi
+    	LF_currState = STATE_IDLE;
+
+		#endif /* PL_CONFIG_HAS_LINE_MAZE */
       break;
 
     case STATE_FINISHED:
@@ -115,9 +250,10 @@ static void StateMachine(void) {
     case STATE_STOP:
     	DRV_Stop(10);
       SHELL_SendString("Stopped!\r\n");
-#if PL_CONFIG_HAS_TURN
-      TURN_Turn(TURN_STOP, NULL);
-#endif
+
+//#if PL_CONFIG_HAS_TURN
+    //  TURN_Turn(TURN_STOP, NULL);  //commented by Kusi
+//#endif
       LF_currState = STATE_IDLE;
       break;
   } /* switch */
@@ -136,11 +272,19 @@ static void LineTask (void *pvParameters) {
     if (notifcationValue&LF_START_FOLLOWING) {
       DRV_SetMode(DRV_MODE_NONE); /* disable any drive mode */
       PID_Start();
-      LF_currState = STATE_FOLLOW_SEGMENT;
+      if((FSM_state==BREAK)){
+    	  FSM_state = FSM_state_save;
+      }else{
+    	  FSM_state = START;  //start
+      }
+      writeflag = FALSE;//continue, were you were stopped
+     // LF_currState = STATE_FOLLOW_SEGMENT;  //changed by Kusi
     }
     if (notifcationValue&LF_STOP_FOLLOWING) {
-      LF_currState = STATE_STOP;
+    	FSM_state = BREAK;
+     // LF_currState = STATE_STOP;  //changed by Kusi
     }
+    StateMachine2();
     StateMachine();
     FRTOS1_vTaskDelay(5/portTICK_PERIOD_MS);
   }
@@ -200,7 +344,9 @@ void LF_Deinit(void) {
 }
 
 void LF_Init(void) {
-  LF_currState = STATE_IDLE;
+  FSM_state = STOP;
+	//LF_currState = STATE_IDLE; changed by Kusi
+
   if (xTaskCreate(LineTask, "Line", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, &LFTaskHandle) != pdPASS) {
     for(;;){} /* error */
   }
