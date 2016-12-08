@@ -84,12 +84,22 @@
 #include "QuadInt.h"
 #include "TimerIntLdd2.h"
 #include "TU_QuadInt.h"
+#include "RNET1.h"
 #include "WAIT1.h"
 #include "CS1.h"
+#include "RF1.h"
+#include "CE2.h"
+#include "BitIoLdd14.h"
+#include "CSN2.h"
+#include "BitIoLdd15.h"
+#include "IRQ2.h"
+#include "ExtIntLdd3.h"
 #include "HF1.h"
 #include "KSDK1.h"
 #include "UTIL1.h"
 #include "KIN1.h"
+#include "SM1.h"
+#include "SMasterLdd2.h"
 #include "IFsh1.h"
 #include "IntFlashLdd1.h"
 #include "USB1.h"
@@ -196,6 +206,22 @@ void FRTOS1_vApplicationMallocFailedHook(void);
 ** ===================================================================
 */
 void QuadInt_OnInterrupt(void);
+
+void RNET1_OnRadioEvent(RNET1_RadioEvent event);
+/*
+** ===================================================================
+**     Event       :  RNET1_OnRadioEvent (module Events)
+**
+**     Component   :  RNET1 [RNet]
+**     Description :
+**         Event created for various radio states, like timeout, ack
+**         received, data sent, ...
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         event           - 
+**     Returns     : Nothing
+** ===================================================================
+*/
 
 /* END Events */
 

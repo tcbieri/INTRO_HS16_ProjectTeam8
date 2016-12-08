@@ -44,13 +44,13 @@ static void Check_Task(void* param) {
   uint16_t lineValue;
   for(;;) {
 
-	  lineValue = REF_GetLineValue();
-
-	  if(lineValue == 0)
-	  {
-		  MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT),0);
-		  MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT),0);
-	  }
+//	  lineValue = REF_GetLineValue();
+//
+//	  if(lineValue == 0)
+//	  {
+//		  MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT),0);
+//		  MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT),0);
+//	  }
 
 
 
