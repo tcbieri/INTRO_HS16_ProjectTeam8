@@ -36,6 +36,10 @@ typedef enum {
 
 static RNETA_State appState = RNETA_NONE;
 
+
+
+
+
 RNWK_ShortAddrType RNETA_GetDestAddr(void) {
   return APP_dstAddr;
 }
@@ -45,6 +49,7 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
   uint8_t buf[32];
   CLS1_ConstStdIOTypePtr io = CLS1_GetStdio();
 #endif
+
   uint8_t val;
   
   (void)size;
@@ -143,6 +148,7 @@ void RNETA_Deinit(void) {
 }
 
 void RNETA_Init(void) {
+
   RNET1_Init(); /* initialize stack */
   if (RAPP_SetMessageHandlerTable(handlerTable)!=ERR_OK) { /* assign application message handler */
     //APP_DebugPrint((unsigned char*)"ERR: failed setting message handler!\r\n");
