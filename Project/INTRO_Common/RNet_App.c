@@ -148,9 +148,6 @@ static void RadioTask(void *pvParameters) {
 
   for(;;) {
     Process(); /* process state machine and radio in/out queues */
-#if PL_LOCAL_CONFIG_BOARD_IS_REMOTE
-    RF1_PollInterrupt();
-#endif
     FRTOS1_vTaskDelay(2/portTICK_PERIOD_MS); /* \todo This will only work properly if having a <= 2ms tick period */
   }
 }
