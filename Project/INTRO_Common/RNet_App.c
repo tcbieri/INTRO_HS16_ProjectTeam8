@@ -137,8 +137,20 @@ static void RadioTask(void *pvParameters) {
   Init(); /* initialize address */
   appState = RNETA_NONE; /* set state machine state */
   configASSERT(portTICK_PERIOD_MS<=2); /* otherwise  vTaskDelay() below will not delay and starve lower prio tasks */
+#if PL_LOCAL_CONFIG_BOARD_IS_REMOTE
+    (void)RNWK_SetThisNodeAddr((RNWK_ShortAddrType)0x10);
+    APP_dstAddr = 0x11;
+#endif
+#if PL_LOCAL_CONFIG_BOARD_IS_ROBO
+	(void)RNWK_SetThisNodeAddr((RNWK_ShortAddrType)0x11);
+	APP_dstAddr = 0x10;
+#endif
+
   for(;;) {
     Process(); /* process state machine and radio in/out queues */
+#if PL_LOCAL_CONFIG_BOARD_IS_REMOTE
+    RF1_PollInterrupt();
+#endif
     FRTOS1_vTaskDelay(2/portTICK_PERIOD_MS); /* \todo This will only work properly if having a <= 2ms tick period */
   }
 }

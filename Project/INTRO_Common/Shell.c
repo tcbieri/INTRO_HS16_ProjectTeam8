@@ -92,10 +92,10 @@ typedef struct {
   size_t bufSize;
 } SHELL_IODesc;
 
-#if RNET_CONFIG_REMOTE_STDIO					// Lab 34.3 Remote STDIO Kevin
-  static unsigned char radio_cmd_buf[48];
-  CLS1_ConstStdIOType *ioRemote;
-#endif
+//#if RNET_CONFIG_REMOTE_STDIO					// Lab 34.3 Remote STDIO Kevin
+//  static unsigned char radio_cmd_buf[48];
+//  CLS1_ConstStdIOType *ioRemote;
+//#endif
 
 
 #if CLS1_DEFAULT_SERIAL && (SHELL_CONFIG_HAS_SHELL_EXTRA_CDC || SHELL_CONFIG_HAS_SHELL_EXTRA_RTT)
@@ -341,10 +341,10 @@ static void ShellTask(void *pvParameters) {
 #endif /* PL_CONFIG_SQUEUE_SINGLE_CHAR */
 #endif /* PL_CONFIG_HAS_SHELL_QUEUE */
 
-#if RNET_CONFIG_REMOTE_STDIO
-    RSTDIO_Print(ioRemote); // dispatch incoming messages and send them to local stan
-    (void)CLS1_ReadAndParseWithCommandTable(radio_cmd_buf, sizeof(radio_cmd_buf), ioRemote, CmdParserTable);
-#endif
+//#if RNET_CONFIG_REMOTE_STDIO
+//    RSTDIO_Print(ioRemote); // dispatch incoming messages and send them to local stan
+//    (void)CLS1_ReadAndParseWithCommandTable(radio_cmd_buf, sizeof(radio_cmd_buf), ioRemote, CmdParserTable);
+//#endif
 
 
     FRTOS1_vTaskDelay(10/portTICK_PERIOD_MS);
@@ -353,10 +353,10 @@ static void ShellTask(void *pvParameters) {
 #endif /* PL_CONFIG_HAS_RTOS */
 
 void SHELL_Init(void) {
-#if RNET_CONFIG_REMOTE_STDIO		// Lab 34.3 Remote STDIO Kevin
-  ioRemote  = RSTDIO_GetStdioRx();
-  radio_cmd_buf[0] = '\0';
-#endif
+//#if RNET_CONFIG_REMOTE_STDIO		// Lab 34.3 Remote STDIO Kevin
+//  ioRemote  = RSTDIO_GetStdioRx();
+//  radio_cmd_buf[0] = '\0';
+//#endif
 
   SHELL_val = 0;
 #if !CLS1_DEFAULT_SERIAL && PL_CONFIG_CONFIG_HAS_BLUETOOTH
