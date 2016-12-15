@@ -91,6 +91,7 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
 		val = *data; /* get data value */
     	if(mySpeed < 10000){
     		mySpeed += 1000;
+    		DRV_SetMode(DRV_MODE_SPEED);
     		DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
     	}
     	CLS1_SendStr((unsigned char*)"MSG: Speed increase: ", io->stdOut);
@@ -101,6 +102,7 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
 		val = *data; /* get data value */
     	if(mySpeed > -10000){
 			mySpeed -= 1000;
+			DRV_SetMode(DRV_MODE_SPEED);
 			DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
 		}
     	CLS1_SendStr((unsigned char*)"MSG: Speed decrease: ", io->stdOut);
@@ -112,6 +114,7 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
     	if(deltaTurn > -2000)
     	{
     		deltaTurn -= 500;
+    		DRV_SetMode(DRV_MODE_SPEED);
     		DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
     	}
     	CLS1_SendStr((unsigned char*)"MSG: Turn lefter: ", io->stdOut);
@@ -123,6 +126,7 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
     	if(deltaTurn < 2000)
 		{
 			deltaTurn += 500;
+			DRV_SetMode(DRV_MODE_SPEED);
 			DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
 		}
     	CLS1_SendStr((unsigned char*)"MSG: Turn righter: ", io->stdOut);

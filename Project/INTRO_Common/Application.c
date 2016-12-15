@@ -18,7 +18,9 @@
 #include "LCDMenu.h"		// added by Kevin
 #include "RApp.h"			// added by Kevin
 #include "RNet_AppConfig.h" // added by Kevin
+#include "RNet_App.h"
 #include "LineFollow.h"
+
 
 
 #if PL_CONFIG_HAS_SHELL
@@ -83,7 +85,7 @@ void APP_EventHandler(EVNT_Handle event) {
     LCDMenu_OnEvent(LCDMENU_EVENT_RIGHT, NULL);
 	#endif
 	#if PL_CONFIG_BOARD_IS_REMOTE
-    	(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_TURN_LEFTER, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+    	(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_TURN_RIGHTER, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
 	#endif
     break;
 #endif
@@ -98,7 +100,9 @@ void APP_EventHandler(EVNT_Handle event) {
      #endif
 	#if PL_CONFIG_HAS_LCD_MENU
      LCDMenu_OnEvent(LCDMENU_EVENT_LEFT, NULL);
-
+	#endif
+	#if PL_CONFIG_BOARD_IS_REMOTE
+     (void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_TURN_LEFTER, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
 	#endif
      break;
 #endif
@@ -114,6 +118,9 @@ void APP_EventHandler(EVNT_Handle event) {
 	#if PL_CONFIG_HAS_LCD_MENU
     LCDMenu_OnEvent(LCDMENU_EVENT_DOWN, NULL);
 	#endif
+	#if PL_CONFIG_BOARD_IS_REMOTE
+		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_SPEED_DECREASE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+	#endif
     break;
 #endif
 
@@ -127,6 +134,9 @@ void APP_EventHandler(EVNT_Handle event) {
     #endif
 	#if PL_CONFIG_HAS_LCD_MENU
     LCDMenu_OnEvent(LCDMENU_EVENT_ENTER, NULL);
+	#endif
+	#if PL_CONFIG_BOARD_IS_REMOTE
+		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_STOPP_ALL, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
 	#endif
     break;
 #endif
@@ -143,6 +153,9 @@ void APP_EventHandler(EVNT_Handle event) {
 	#if PL_CONFIG_HAS_LCD_MENU
     LCDMenu_OnEvent(LCDMENU_EVENT_UP, NULL);
 	#endif
+	#if PL_CONFIG_BOARD_IS_REMOTE
+		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_SPEED_INCREASE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+	#endif
     break;
 #endif
 
@@ -157,6 +170,9 @@ void APP_EventHandler(EVNT_Handle event) {
 	#if PL_CONFIG_HAS_LCD_MENU
     LCDMenu_OnEvent(LCDMENU_EVENT_DOWN, NULL);
 	#endif
+#if PL_CONFIG_BOARD_IS_REMOTE
+		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_REMOTE_DISABLE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+	#endif
     break;
 #endif
 
@@ -170,6 +186,9 @@ void APP_EventHandler(EVNT_Handle event) {
     #endif
 	#if PL_CONFIG_HAS_LCD_MENU
     LCDMenu_OnEvent(LCDMENU_EVENT_UP, NULL);
+	#endif
+#if PL_CONFIG_BOARD_IS_REMOTE
+		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_REMOTE_ENABLE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
 	#endif
     break;
 #endif
