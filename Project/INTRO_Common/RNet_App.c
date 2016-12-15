@@ -137,13 +137,13 @@ static void RadioTask(void *pvParameters) {
   Init(); /* initialize address */
   appState = RNETA_NONE; /* set state machine state */
   configASSERT(portTICK_PERIOD_MS<=2); /* otherwise  vTaskDelay() below will not delay and starve lower prio tasks */
-#if PL_LOCAL_CONFIG_BOARD_IS_REMOTE
-    (void)RNWK_SetThisNodeAddr((RNWK_ShortAddrType)0x10);
-    APP_dstAddr = 0x11;
+#if PL_LOCAL_CONFIG_BOARD_IS_REMOTE | PL_LOCAL_CONFIG_BOARD_IS_FRDM
+    (void)RNWK_SetThisNodeAddr((RNWK_ShortAddrType)DEF_RADIO_ADDRESS_REMOTE);
+    APP_dstAddr = DEF_RADIO_ADDRESS_ROBOT;
 #endif
 #if PL_LOCAL_CONFIG_BOARD_IS_ROBO
-	(void)RNWK_SetThisNodeAddr((RNWK_ShortAddrType)0x11);
-	APP_dstAddr = 0x10;
+	(void)RNWK_SetThisNodeAddr((RNWK_ShortAddrType)DEF_RADIO_ADDRESS_ROBOT);
+	APP_dstAddr = DEF_RADIO_ADDRESS_REMOTE;
 #endif
 
   for(;;) {

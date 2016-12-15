@@ -24,6 +24,9 @@ typedef enum {
   /* \todo extend with your own messages */
 } RAPP_MSG_Type;
 
+#define DEF_RADIO_ADDRESS_ROBOT 35
+#define DEF_RADIO_ADDRESS_REMOTE 34
+
 #endif /* PL_CONFIG_HAS_RADIO */
 
 #endif /* __RNET_APP_CONFIG__ */

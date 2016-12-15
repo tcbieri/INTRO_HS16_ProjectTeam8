@@ -92,8 +92,6 @@
 #include "BitIoLdd14.h"
 #include "CSN2.h"
 #include "BitIoLdd15.h"
-#include "IRQ2.h"
-#include "ExtIntLdd3.h"
 #include "HF1.h"
 #include "KSDK1.h"
 #include "UTIL1.h"

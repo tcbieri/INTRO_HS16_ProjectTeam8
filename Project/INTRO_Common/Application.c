@@ -14,7 +14,8 @@
 #include "CS1.h"
 #include "Keys.h"
 #include "KIN1.h"
-#include "Reflectance.h"  //added by Kusi
+#include "Reflectance.h"  	//added by Kusi
+#include "LCDMenu.h"		// added by Kevin
 
 #if PL_CONFIG_HAS_SHELL
   #include "CLS1.h"
@@ -71,6 +72,9 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
+	#if PL_CONFIG_HAS_LCD_MENU
+    LCDMenu_OnEvent(LCDMENU_EVENT_RIGHT, NULL);
+	#endif
     break;
 #endif
 
@@ -82,6 +86,9 @@ void APP_EventHandler(EVNT_Handle event) {
      #if PL_CONFIG_HAS_BUZZER
      BUZ_PlayTune(BUZ_TUNE_BUTTON);
      #endif
+	#if PL_CONFIG_HAS_LCD_MENU
+     LCDMenu_OnEvent(LCDMENU_EVENT_LEFT, NULL);
+	#endif
      break;
 #endif
 
@@ -93,6 +100,9 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
+	#if PL_CONFIG_HAS_LCD_MENU
+    LCDMenu_OnEvent(LCDMENU_EVENT_DOWN, NULL);
+	#endif
     break;
 #endif
 
@@ -104,6 +114,9 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
+	#if PL_CONFIG_HAS_LCD_MENU
+    LCDMenu_OnEvent(LCDMENU_EVENT_ENTER, NULL);
+	#endif
     break;
 #endif
 
@@ -116,6 +129,9 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
+	#if PL_CONFIG_HAS_LCD_MENU
+    LCDMenu_OnEvent(LCDMENU_EVENT_UP, NULL);
+	#endif
     break;
 #endif
 
@@ -127,6 +143,9 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
+	#if PL_CONFIG_HAS_LCD_MENU
+    LCDMenu_OnEvent(LCDMENU_EVENT_DOWN, NULL);
+	#endif
     break;
 #endif
 
@@ -138,9 +157,11 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
+	#if PL_CONFIG_HAS_LCD_MENU
+    LCDMenu_OnEvent(LCDMENU_EVENT_UP, NULL);
+	#endif
     break;
 #endif
-
 #endif /* PL_CONFIG_HAS_KEYS */
 
     /* \todo extend handler as needed */
