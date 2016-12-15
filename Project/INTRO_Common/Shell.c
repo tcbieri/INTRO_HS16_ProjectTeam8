@@ -362,6 +362,9 @@ void SHELL_Init(void) {
 #if !CLS1_DEFAULT_SERIAL && PL_CONFIG_CONFIG_HAS_BLUETOOTH
   (void)CLS1_SetStdio(&BT_stdio); /* use the Bluetooth stdio as default */
 #endif
+#if !CLS1_DEFAULT_SERIAL
+  (void)CLS1_SetStdio(&RTT1_stdio); /* use the RTT stdio as default e.g. for radio sniffer */
+#endif
 #if PL_CONFIG_HAS_RTOS
   if (FRTOS1_xTaskCreate(ShellTask, "Shell", configMINIMAL_STACK_SIZE+100, NULL, tskIDLE_PRIORITY+1, NULL) != pdPASS) {
     for(;;){} /* error */
