@@ -22,6 +22,7 @@
 #include "RPHY.h"
 #include "Shell.h"
 #include "Motor.h"
+#include "Drive.h"
 #if PL_CONFIG_HAS_REMOTE
   #include "Remote.h"
 #endif
@@ -36,7 +37,8 @@ typedef enum {
 
 static RNETA_State appState = RNETA_NONE;
 
-
+static int32_t mySpeed;
+static int32_t deltaTurn;
 
 
 
@@ -72,6 +74,69 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
       CLS1_SendStr(buf, io->stdOut);
 #endif /* PL_HAS_SHELL */      
       return ERR_OK;
+      break;
+#if PL_CONFIG_BOARD_IS_ROBO
+    case RAPP_MSG_TYPE_STOPP_ALL:
+    	*handled = TRUE;
+    	val = *data; /* get data value */
+    	mySpeed = 0;
+    	deltaTurn = 0;
+    	DRV_SetSpeed(0,0);
+    	DRV_SetPos(0,0);
+    	DRV_SetMode(DRV_MODE_NONE);
+    	CLS1_SendStr((unsigned char*)"MSG: Stopp all!", io->stdOut);
+    	break;
+    case RAPP_MSG_TYPE_SPEED_INCREASE:
+    	*handled = TRUE;
+		val = *data; /* get data value */
+    	if(mySpeed < 10000){
+    		mySpeed += 1000;
+    		DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
+    	}
+    	CLS1_SendStr((unsigned char*)"MSG: Speed increase: ", io->stdOut);
+    	CLS1_SendNum16s((int16_t)mySpeed, io->stdOut);
+    	break;
+    case RAPP_MSG_TYPE_SPEED_DECREASE:
+    	*handled = TRUE;
+		val = *data; /* get data value */
+    	if(mySpeed > -10000){
+			mySpeed -= 1000;
+			DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
+		}
+    	CLS1_SendStr((unsigned char*)"MSG: Speed decrease: ", io->stdOut);
+    	CLS1_SendNum16s((int16_t)mySpeed, io->stdOut);
+    	break;
+    case RAPP_MSG_TYPE_TURN_LEFTER:
+    	*handled = TRUE;
+		val = *data; /* get data value */
+    	if(deltaTurn > -2000)
+    	{
+    		deltaTurn -= 500;
+    		DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
+    	}
+    	CLS1_SendStr((unsigned char*)"MSG: Turn lefter: ", io->stdOut);
+		CLS1_SendNum16s((int16_t)deltaTurn, io->stdOut);
+    	break;
+    case RAPP_MSG_TYPE_TURN_RIGHTER:
+    	*handled = TRUE;
+		val = *data; /* get data value */
+    	if(deltaTurn < 2000)
+		{
+			deltaTurn += 500;
+			DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
+		}
+    	CLS1_SendStr((unsigned char*)"MSG: Turn righter: ", io->stdOut);
+		CLS1_SendNum16s((int16_t)deltaTurn, io->stdOut);
+    	break;
+    case RAPP_MSG_TYPE_REMOTE_ENABLE:
+    	*handled = TRUE;
+		val = *data; /* get data value */
+    	break;
+    case RAPP_MSG_TYPE_REMOTE_DISABLE:
+    	*handled = TRUE;
+		val = *data; /* get data value */
+    	break;
+#endif
     default: /*! \todo Handle your own messages here */
       break;
   } /* switch */
@@ -157,6 +222,9 @@ void RNETA_Deinit(void) {
 }
 
 void RNETA_Init(void) {
+
+  mySpeed = 0;
+  deltaTurn = 0;
 
   RNET1_Init(); /* initialize stack */
   if (RAPP_SetMessageHandlerTable(handlerTable)!=ERR_OK) { /* assign application message handler */

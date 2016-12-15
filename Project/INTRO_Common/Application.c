@@ -16,6 +16,10 @@
 #include "KIN1.h"
 #include "Reflectance.h"  	//added by Kusi
 #include "LCDMenu.h"		// added by Kevin
+#include "RApp.h"			// added by Kevin
+#include "RNet_AppConfig.h" // added by Kevin
+#include "LineFollow.h"
+
 
 #if PL_CONFIG_HAS_SHELL
   #include "CLS1.h"
@@ -43,6 +47,9 @@
 
 #if PL_CONFIG_HAS_EVENTS
 void APP_EventHandler(EVNT_Handle event) {
+
+  uint8 dummyValue = 0;
+
   switch(event) {
   case EVNT_STARTUP:
     LED1_On(); /* just do something */
@@ -75,6 +82,9 @@ void APP_EventHandler(EVNT_Handle event) {
 	#if PL_CONFIG_HAS_LCD_MENU
     LCDMenu_OnEvent(LCDMENU_EVENT_RIGHT, NULL);
 	#endif
+	#if PL_CONFIG_BOARD_IS_REMOTE
+    	(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_TURN_LEFTER, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+	#endif
     break;
 #endif
 
@@ -88,6 +98,7 @@ void APP_EventHandler(EVNT_Handle event) {
      #endif
 	#if PL_CONFIG_HAS_LCD_MENU
      LCDMenu_OnEvent(LCDMENU_EVENT_LEFT, NULL);
+
 	#endif
      break;
 #endif
