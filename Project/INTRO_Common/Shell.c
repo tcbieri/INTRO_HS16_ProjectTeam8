@@ -341,7 +341,7 @@ static void ShellTask(void *pvParameters) {
 #endif /* PL_CONFIG_SQUEUE_SINGLE_CHAR */
 #endif /* PL_CONFIG_HAS_SHELL_QUEUE */
 
-//#if RNET_CONFIG_REMOTE_STDIO
+//#if RNET_CONFIG_REMOTE_STDIO		// Lab 34.3 Remote STDIo Kevin
 //    RSTDIO_Print(ioRemote); // dispatch incoming messages and send them to local stan
 //    (void)CLS1_ReadAndParseWithCommandTable(radio_cmd_buf, sizeof(radio_cmd_buf), ioRemote, CmdParserTable);
 //#endif

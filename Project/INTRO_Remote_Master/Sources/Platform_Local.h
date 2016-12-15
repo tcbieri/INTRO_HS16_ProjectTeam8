@@ -37,7 +37,7 @@
 //#define PL_LOCAL_CONFIG_HAS_DEBOUNCE_DISABLED             /* disable debouncing */
 //#define PL_LOCAL_CONFIG_HAS_RTOS_DISABLED                 /* disable RTOS usage */
 //#define PL_LOCAL_CONFIG_HAS_SHELL_DISABLED                /* disable shell */
-//#define PL_LOCAL_CONFIG_HAS_SEGGER_RTT_DISABLED           /* disable Segger RTT */
+#define PL_LOCAL_CONFIG_HAS_SEGGER_RTT_DISABLED           /* disable Segger RTT */
 //#define PL_LOCAL_CONFIG_HAS_SHELL_QUEUE_DISABLED          /* disable shell queue */
 #define PL_LOCAL_CONFIG_HAS_SQUEUE_SINGLE_CHAR_DISABLED   /* disable single character support in shell queue */
 //#define PL_LOCAL_CONFIG_HAS_SEMAPHORE_DISABLED            /* disable semaphore test module */
@@ -48,7 +48,7 @@
 //#define PL_LOCAL_CONFIG_HAS_RADIO_DISABLED                /* disable Radio transceiver */
 //#define PL_LOCAL_CONFIG_HAS_REMOTE_STDIO_DISABLED         /* disable Std I/O over radio */
 #define PL_LOCAL_CONFIG_HAS_REMOTE_DISABLED               /* disable remote controller (sender and receiver) */
-//#define PL_LOCAL_CONFIG_HAS_CONTROL_SENDER_DISABLED       /* disable that we are the sender (otherwise we are the receiver) */
+#define PL_LOCAL_CONFIG_HAS_CONTROL_SENDER_DISABLED       /* disable that we are the sender (otherwise we are the receiver) */
 #define PL_LOCAL_CONFIG_HAS_JOYSTICK_DISABLED             /* disable joystick */
 //#define PL_LOCAL_CONFIG_HAS_LCD_DISABLED                  /* disable LCD */
 //#define PL_LOCAL_CONFIG_HAS_LCD_MENU_DISABLED             /* disable LCD menu */
