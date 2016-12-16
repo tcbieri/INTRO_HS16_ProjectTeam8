@@ -123,7 +123,7 @@ static void StateMachine2(void){
 		break;
 
 	case START:
-		DRV_SetMode(DRV_MODE_SPEED);
+		//DRV_SetMode(DRV_MODE_SPEED);
 		FSM_state = FORWARD;
 		LF_currState = STATE_FOLLOW_SEGMENT;
 		FSM_state_save = START;  //save current state
@@ -165,7 +165,7 @@ static void StateMachine2(void){
 		if(writeflag==FALSE){
 			SHELL_SendString("BACK!\r\n");
 			writeflag = TRUE;
-			DRV_SetMode(DRV_MODE_SPEED);
+			//DRV_SetMode(DRV_MODE_SPEED);
 			LF_currState = STATE_FOLLOW_SEGMENT;
 		}
 
@@ -244,7 +244,7 @@ static void StateMachine(void) {
     	TURN_TurnAngle(180, NULL);    //changed by Kusi
     	TURN_Turn(TURN_STOP, NULL);	//changed by Kusi
     	//FSM_state = BACK;  //changed by Kusi
-    	DRV_SetMode(DRV_MODE_STOP);			// changed by Kevin
+    	DRV_SetMode(DRV_MODE_NONE);			// changed by Kevin
     	LF_currState = STATE_IDLE;
 
 		#endif /* PL_CONFIG_HAS_LINE_MAZE */
