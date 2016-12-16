@@ -113,7 +113,7 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
 		val = *data; /* get data value */
     	if(deltaTurn > -2000)
     	{
-    		deltaTurn -= 500;
+    		deltaTurn -= 300;
     		DRV_SetMode(DRV_MODE_SPEED);
     		DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
     	}
@@ -125,7 +125,7 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
 		val = *data; /* get data value */
     	if(deltaTurn < 2000)
 		{
-			deltaTurn += 500;
+			deltaTurn += 300;
 			DRV_SetMode(DRV_MODE_SPEED);
 			DRV_SetSpeed(mySpeed+deltaTurn, mySpeed-deltaTurn);
 		}

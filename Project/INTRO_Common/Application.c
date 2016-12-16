@@ -20,6 +20,7 @@
 #include "RNet_AppConfig.h" // added by Kevin
 #include "RNet_App.h"
 #include "LineFollow.h"
+#include "LCD.h"
 
 
 
@@ -46,6 +47,9 @@
 #if PL_CONFIG_BOARD_IS_ROBO_V2
   #include "PORT_PDD.h"
 #endif
+
+
+static bool remoteControlEnable = FALSE;
 
 #if PL_CONFIG_HAS_EVENTS
 void APP_EventHandler(EVNT_Handle event) {
@@ -81,12 +85,18 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
-	#if PL_CONFIG_HAS_LCD_MENU
-    LCDMenu_OnEvent(LCDMENU_EVENT_RIGHT, NULL);
-	#endif
-	#if PL_CONFIG_BOARD_IS_REMOTE
-    	(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_TURN_RIGHTER, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
-	#endif
+    if(!remoteControlEnable) {
+		#if PL_CONFIG_HAS_LCD_MENU
+    		LCDMenu_OnEvent(LCDMENU_EVENT_RIGHT, NULL);
+		#endif
+    }
+    else{
+		#if PL_CONFIG_BOARD_IS_REMOTE
+    		(void)LCDMenu_IncDirection();
+			(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_TURN_RIGHTER, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+			LCDMenu_OnEvent(LCDMENU_EVENT_DRAW, NULL);
+		#endif
+    }
     break;
 #endif
 
@@ -98,12 +108,18 @@ void APP_EventHandler(EVNT_Handle event) {
      #if PL_CONFIG_HAS_BUZZER
      BUZ_PlayTune(BUZ_TUNE_BUTTON);
      #endif
-	#if PL_CONFIG_HAS_LCD_MENU
-     LCDMenu_OnEvent(LCDMENU_EVENT_LEFT, NULL);
-	#endif
-	#if PL_CONFIG_BOARD_IS_REMOTE
-     (void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_TURN_LEFTER, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
-	#endif
+    if(!remoteControlEnable) {
+		#if PL_CONFIG_HAS_LCD_MENU
+    		LCDMenu_OnEvent(LCDMENU_EVENT_LEFT, NULL);
+		#endif
+    }
+    else {
+		#if PL_CONFIG_BOARD_IS_REMOTE
+    		(void)LCDMenu_DecDirection();
+    		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_TURN_LEFTER, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+    		LCDMenu_OnEvent(LCDMENU_EVENT_DRAW, NULL);
+		#endif
+    }
      break;
 #endif
 
@@ -115,12 +131,18 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
-	#if PL_CONFIG_HAS_LCD_MENU
-    LCDMenu_OnEvent(LCDMENU_EVENT_DOWN, NULL);
-	#endif
-	#if PL_CONFIG_BOARD_IS_REMOTE
-		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_SPEED_DECREASE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
-	#endif
+    if(!remoteControlEnable) {
+		#if PL_CONFIG_HAS_LCD_MENU
+		LCDMenu_OnEvent(LCDMENU_EVENT_DOWN, NULL);
+		#endif
+    }
+    else {
+		#if PL_CONFIG_BOARD_IS_REMOTE
+    		(void)LCDMenu_DecSpeed();
+			(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_SPEED_DECREASE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+			LCDMenu_OnEvent(LCDMENU_EVENT_DRAW, NULL);
+		#endif
+    }
     break;
 #endif
 
@@ -132,12 +154,18 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
-	#if PL_CONFIG_HAS_LCD_MENU
-    LCDMenu_OnEvent(LCDMENU_EVENT_ENTER, NULL);
-	#endif
-	#if PL_CONFIG_BOARD_IS_REMOTE
-		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_STOPP_ALL, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
-	#endif
+    if(!remoteControlEnable) {
+		#if PL_CONFIG_HAS_LCD_MENU
+		LCDMenu_OnEvent(LCDMENU_EVENT_ENTER, NULL);
+		#endif
+    }
+    else{
+		#if PL_CONFIG_BOARD_IS_REMOTE
+    		(void)LCDMenu_ResetDrive();
+			(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_STOPP_ALL, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+			LCDMenu_OnEvent(LCDMENU_EVENT_DRAW, NULL);
+		#endif
+    }
     break;
 #endif
 
@@ -150,12 +178,18 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
-	#if PL_CONFIG_HAS_LCD_MENU
-    LCDMenu_OnEvent(LCDMENU_EVENT_UP, NULL);
-	#endif
-	#if PL_CONFIG_BOARD_IS_REMOTE
-		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_SPEED_INCREASE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
-	#endif
+    if(!remoteControlEnable) {
+		#if PL_CONFIG_HAS_LCD_MENU
+		LCDMenu_OnEvent(LCDMENU_EVENT_UP, NULL);
+		#endif
+    }
+    else {
+		#if PL_CONFIG_BOARD_IS_REMOTE
+    		LCDMenu_IncSpeed();
+			(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_SPEED_INCREASE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+			LCDMenu_OnEvent(LCDMENU_EVENT_DRAW, NULL);
+		#endif
+    }
     break;
 #endif
 
@@ -167,11 +201,14 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
-	#if PL_CONFIG_HAS_LCD_MENU
-    LCDMenu_OnEvent(LCDMENU_EVENT_DOWN, NULL);
-	#endif
+    if(!remoteControlEnable) {
+		#if PL_CONFIG_HAS_LCD_MENU
+		LCDMenu_OnEvent(LCDMENU_EVENT_DOWN, NULL);
+		#endif
+    }
 #if PL_CONFIG_BOARD_IS_REMOTE
 		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_REMOTE_DISABLE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+		remoteControlEnable = FALSE;
 	#endif
     break;
 #endif
@@ -184,11 +221,16 @@ void APP_EventHandler(EVNT_Handle event) {
     #if PL_CONFIG_HAS_BUZZER
     BUZ_PlayTune(BUZ_TUNE_BUTTON);
     #endif
-	#if PL_CONFIG_HAS_LCD_MENU
-    LCDMenu_OnEvent(LCDMENU_EVENT_UP, NULL);
-	#endif
+    if(!remoteControlEnable) {
+		#if PL_CONFIG_HAS_LCD_MENU
+		LCDMenu_OnEvent(LCDMENU_EVENT_UP, NULL);
+		#endif
+    }
 #if PL_CONFIG_BOARD_IS_REMOTE
 		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_REMOTE_ENABLE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+		remoteControlEnable = TRUE;
+		void LCDMenu_SetDrive(void);
+		LCDMenu_OnEvent(LCDMENU_EVENT_DRAW, NULL);
 	#endif
     break;
 #endif

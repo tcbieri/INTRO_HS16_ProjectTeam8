@@ -30,6 +30,12 @@ void LCD_Deinit(void);
  */
 void LCD_Init(void);
 
+void LCDMenu_IncSpeed(void);
+void LCDMenu_DecSpeed(void);
+void LCDMenu_IncDirection(void);
+void LCDMenu_DecDirection(void);
+void LCDMenu_ResetDrive(void);
+
 #endif /* PL_CONFIG_HAS_LCD */
 
 #endif /* SOURCES_LCD_H_ */

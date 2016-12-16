@@ -24,6 +24,8 @@
 /* status variables */
 static bool LedBackLightisOn = TRUE;
 static bool requestLCDUpdate = FALSE;
+static int16_t currentSpeed = 0;
+static int16_t currentDirection = 0;
 
 #if PL_CONFIG_HAS_LCD_MENU
 typedef enum {
@@ -31,7 +33,32 @@ typedef enum {
   LCD_MENU_ID_MAIN,
     LCD_MENU_ID_BACKLIGHT,
     LCD_MENU_ID_NUM_VALUE,
+  LCD_MENU_ID_REMOTE,
+    LCD_MENU_ID_NUM_SPEED,
+	LCD_MENU_ID_NUM_DIRECTION,
 } LCD_MenuIDs;
+
+
+void LCDMenu_IncSpeed(void) {
+	currentSpeed++;
+}
+
+void LCDMenu_DecSpeed(void) {
+	currentSpeed--;
+}
+
+void LCDMenu_IncDirection(void) {
+	currentDirection++;
+}
+
+void LCDMenu_DecDirection(void) {
+	currentDirection--;
+}
+
+void LCDMenu_ResetDrive(void) {
+	currentDirection = 0;
+	currentSpeed = 0;
+}
 
 static LCDMenu_StatusFlags ValueChangeHandler(const struct LCDMenu_MenuItem_ *item, LCDMenu_EventType event, void **dataP) {
   static int value = 0;
@@ -78,11 +105,47 @@ static LCDMenu_StatusFlags BackLightMenuHandler(const struct LCDMenu_MenuItem_ *
   return flags;
 }
 
+static LCDMenu_StatusFlags SpeedChangeHandler(const struct LCDMenu_MenuItem_ *item, LCDMenu_EventType event, void **dataP) {
+  LCDMenu_StatusFlags flags = LCDMENU_STATUS_FLAGS_NONE;
+
+  (void)item;
+  static uint8_t string[16];
+
+  if (event==LCDMENU_EVENT_GET_TEXT && dataP!=NULL) {
+	  //*string = "Speed is: ";
+	  UTIL1_strcpy(string, 16, "Speed is: ");
+	  UTIL1_Num16sToStr(string+10,5, currentSpeed);
+	  *dataP = string;
+	  flags |= LCDMENU_STATUS_FLAGS_HANDLED|LCDMENU_STATUS_FLAGS_UPDATE_VIEW;
+  }
+  return flags;
+}
+
+static LCDMenu_StatusFlags DirectionChangeHandler(const struct LCDMenu_MenuItem_ *item, LCDMenu_EventType event, void **dataP) {
+  LCDMenu_StatusFlags flags = LCDMENU_STATUS_FLAGS_NONE;
+
+  (void)item;
+  static uint8_t string[17];
+
+  if (event==LCDMENU_EVENT_GET_TEXT && dataP!=NULL) {
+	  //*string = "Speed is: ";
+	  UTIL1_strcpy(string, 16, "Direct. is: ");
+	  UTIL1_Num16sToStr(string+12,5, currentDirection);
+	  *dataP = string;
+	  flags |= LCDMENU_STATUS_FLAGS_HANDLED|LCDMENU_STATUS_FLAGS_UPDATE_VIEW;
+  }
+  return flags;
+}
+
 static const LCDMenu_MenuItem menus[] =
 {/* id,                                     grp, pos,   up,                       down,                             text,           callback                      flags                  */
     {LCD_MENU_ID_MAIN,                        0,   0,   LCD_MENU_ID_NONE,         LCD_MENU_ID_BACKLIGHT,            "General",      NULL,                         LCDMENU_MENU_FLAGS_NONE},
       {LCD_MENU_ID_BACKLIGHT,                 1,   0,   LCD_MENU_ID_MAIN,         LCD_MENU_ID_NONE,                 NULL,           BackLightMenuHandler,         LCDMENU_MENU_FLAGS_NONE},
       {LCD_MENU_ID_NUM_VALUE,                 1,   1,   LCD_MENU_ID_MAIN,         LCD_MENU_ID_NONE,                 NULL,           ValueChangeHandler,           LCDMENU_MENU_FLAGS_EDITABLE},
+	{LCD_MENU_ID_REMOTE,                      0,   1,   LCD_MENU_ID_NONE,         LCD_MENU_ID_NUM_SPEED,           	"Drive",      	NULL,                         LCDMENU_MENU_FLAGS_NONE},
+	  {LCD_MENU_ID_NUM_SPEED,                 2,   0,   LCD_MENU_ID_REMOTE,       LCD_MENU_ID_NONE,                 NULL,           SpeedChangeHandler,           LCDMENU_MENU_FLAGS_NONE},
+	  {LCD_MENU_ID_NUM_DIRECTION,             2,   1,   LCD_MENU_ID_REMOTE,       LCD_MENU_ID_NONE,                 NULL,           DirectionChangeHandler,       LCDMENU_MENU_FLAGS_NONE},
+
 };
 
 uint8_t LCD_HandleRemoteRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *data, RNWK_ShortAddrType srcAddr, bool *handled, RPHY_PacketDesc *packet) {

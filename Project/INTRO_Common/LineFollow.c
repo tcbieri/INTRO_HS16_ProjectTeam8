@@ -173,7 +173,7 @@ static void StateMachine2(void){
 			writeflag = FALSE;
 			DRV_Reset();
 			DRV_SetMode(DRV_MODE_POS);
-			DRV_SetPos(500, 500);
+			DRV_SetPos(300, 300);
 		}
 		break;
 
@@ -185,6 +185,7 @@ static void StateMachine2(void){
 		if(DRV_IsStopped())
 		{
 			FSM_state = STOP;
+			DRV_SetSpeed(0,0);			// changed by Kevin
 			DRV_SetMode(DRV_MODE_NONE);
 		}
 		//(playtune!?)
@@ -237,6 +238,7 @@ static void StateMachine(void) {
     	TURN_TurnAngle(180, NULL);    //changed by Kusi
     	TURN_Turn(TURN_STOP, NULL);	//changed by Kusi
     	//FSM_state = BACK;  //changed by Kusi
+    	DRV_SetSpeed(0,0);			// changed by Kevin
     	LF_currState = STATE_IDLE;
 
 		#endif /* PL_CONFIG_HAS_LINE_MAZE */

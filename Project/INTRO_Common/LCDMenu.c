@@ -338,4 +338,10 @@ void LCDMenu_Init(void) {
   menuStatus.selectedID = 1;
 }
 
+void LCDMenu_SetDrive(void) {
+	menuStatus.topGroup = 2;
+	menuStatus.topPos = 0;
+	menuStatus.selectedID = 1;
+}
+
 #endif /* PL_CONFIG_HAS_LCD_MENU */
