@@ -135,10 +135,10 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
     	*handled = TRUE;
 		val = *data; /* get data value */
     	break;
-    case RAPP_MSG_TYPE_REMOTE_DISABLE:
+    case RAPP_SG_TYPE_REMOTE_DISABLE:
     	*handled = TRUE;
 		val = *data; /* get data value */
-		void LF_StartFollowing(void);
+		LF_StartFollowing();
     	break;
 
 #endif

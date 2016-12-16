@@ -123,6 +123,7 @@ static void StateMachine2(void){
 		break;
 
 	case START:
+		DRV_SetMode(DRV_MODE_SPEED);
 		FSM_state = FORWARD;
 		LF_currState = STATE_FOLLOW_SEGMENT;
 		FSM_state_save = START;  //save current state
@@ -147,9 +148,9 @@ static void StateMachine2(void){
 
 	case TURN:
 		if(writeflag==FALSE){
-		SHELL_SendString("TURN!\r\n");
-		writeflag = TRUE;
-		LF_currState = STATE_TURN;
+			SHELL_SendString("TURN!\r\n");
+			writeflag = TRUE;
+			LF_currState = STATE_TURN;
 		}
 		FSM_state_save = FSM_state;  //save current state
 
@@ -162,10 +163,12 @@ static void StateMachine2(void){
 
 	case BACK:
 		if(writeflag==FALSE){
-		SHELL_SendString("BACK!\r\n");
-		writeflag = TRUE;
-		LF_currState = STATE_FOLLOW_SEGMENT;
+			SHELL_SendString("BACK!\r\n");
+			writeflag = TRUE;
+			DRV_SetMode(DRV_MODE_SPEED);
+			LF_currState = STATE_FOLLOW_SEGMENT;
 		}
+
 		FSM_state_save = FSM_state;  //save current state
 
 		if(LF_currState == STATE_IDLE)
@@ -189,7 +192,7 @@ static void StateMachine2(void){
 		{
 			FSM_state = STOP;
 			DRV_SetSpeed(0,0);			// changed by Kevin
-			DRV_SetMode(DRV_MODE_NONE);
+			DRV_SetMode(DRV_MODE_STOP);
 		}
 		//(playtune!?)
 		break;
@@ -241,7 +244,7 @@ static void StateMachine(void) {
     	TURN_TurnAngle(180, NULL);    //changed by Kusi
     	TURN_Turn(TURN_STOP, NULL);	//changed by Kusi
     	//FSM_state = BACK;  //changed by Kusi
-    	DRV_SetSpeed(0,0);			// changed by Kevin
+    	DRV_SetMode(DRV_MODE_STOP);			// changed by Kevin
     	LF_currState = STATE_IDLE;
 
 		#endif /* PL_CONFIG_HAS_LINE_MAZE */
@@ -254,6 +257,7 @@ static void StateMachine(void) {
       break;
     case STATE_STOP:
     	DRV_Stop(10);
+    	DRV_SetMode(DRV_MODE_STOP);
       SHELL_SendString("Stopped!\r\n");
 
 //#if PL_CONFIG_HAS_TURN
