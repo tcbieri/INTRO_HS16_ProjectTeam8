@@ -18,6 +18,7 @@ void APP_EventHandler(EVNT_Handle event);
 #endif
 
 static void Critical(void);
+void ContestSendSignal(char signal);
 
 void APP_Start(void);
 

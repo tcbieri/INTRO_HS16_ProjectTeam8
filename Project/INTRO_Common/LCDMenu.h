@@ -67,7 +67,6 @@ void LCDMenu_Deinit(void);
  * \brief Driver initialization
  */
 void LCDMenu_Init(void);
-void LCDMenu_SetDrive(void);
 
 #endif /* PL_CONFIG_HAS_LCD_MENU */
 

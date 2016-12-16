@@ -50,6 +50,7 @@
 
 
 static bool remoteControlEnable = FALSE;
+static bool startContestSignalA = FALSE;
 
 #if PL_CONFIG_HAS_EVENTS
 void APP_EventHandler(EVNT_Handle event) {
@@ -188,6 +189,9 @@ void APP_EventHandler(EVNT_Handle event) {
     		LCDMenu_IncSpeed();
 			(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_SPEED_INCREASE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
 			LCDMenu_OnEvent(LCDMENU_EVENT_DRAW, NULL);
+			if(!startContestSignalA) {
+				ContestSendSignal('A');
+			}
 		#endif
     }
     break;
@@ -226,11 +230,10 @@ void APP_EventHandler(EVNT_Handle event) {
 		LCDMenu_OnEvent(LCDMENU_EVENT_UP, NULL);
 		#endif
     }
-#if PL_CONFIG_BOARD_IS_REMOTE
+	#if PL_CONFIG_BOARD_IS_REMOTE
 		(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_REMOTE_ENABLE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
+		ContestSendSignal('T');
 		remoteControlEnable = TRUE;
-		void LCDMenu_SetDrive(void);
-		LCDMenu_OnEvent(LCDMENU_EVENT_DRAW, NULL);
 	#endif
     break;
 #endif
@@ -240,6 +243,36 @@ void APP_EventHandler(EVNT_Handle event) {
    } /* switch */
 }
 #endif /* PL_CONFIG_HAS_EVENTS */
+
+
+void ContestSendSignal(char signal) {
+	uint8_t message[2];
+	message[0] = 8;
+
+	switch(signal) {
+		case 'A':
+			message[1] = 'A';
+			break;
+		case 'B':
+			message[1] = 'B';
+			break;
+		case 'C':
+			message[1] = 'C';
+			break;
+		case 'T':
+			message[1] = 'T';
+			break;
+		case 'X':
+			message[1] = 'X';
+			break;
+		default:
+			message[1] = 'C';
+			break;
+	}
+
+	(void)RAPP_SendPayloadDataBlock(message, 2, 0xAC, 0x12, RPHY_PACKET_FLAGS_NONE);
+
+}
 
 static const KIN1_UID RoboIDs[] = {
   /* 0: L20, V2 */ {0x00,0x03,0x00,0x00,0x4E,0x45,0xB7,0x21,0x4E,0x45,0x32,0x15,0x30,0x02,0x00,0x13},

@@ -130,8 +130,9 @@ static void StateMachine2(void){
 
 	case FORWARD:
 		if(writeflag==FALSE){
-		SHELL_SendString("FORWARD!\r\n");
-		writeflag = TRUE;
+			SHELL_SendString("FORWARD!\r\n");
+			writeflag = TRUE;
+			ContestSendSignal('B');
 		}
 
 		if(LF_currState == STATE_IDLE)
@@ -174,6 +175,8 @@ static void StateMachine2(void){
 			DRV_Reset();
 			DRV_SetMode(DRV_MODE_POS);
 			DRV_SetPos(300, 300);
+			ContestSendSignal('C');
+
 		}
 		break;
 

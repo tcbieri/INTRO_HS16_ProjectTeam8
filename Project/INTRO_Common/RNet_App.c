@@ -82,8 +82,7 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
     	mySpeed = 0;
     	deltaTurn = 0;
     	DRV_SetSpeed(0,0);
-    	DRV_SetPos(0,0);
-    	DRV_SetMode(DRV_MODE_NONE);
+		DRV_SetMode(DRV_MODE_SPEED);
     	CLS1_SendStr((unsigned char*)"MSG: Stopp all!", io->stdOut);
     	break;
     case RAPP_MSG_TYPE_SPEED_INCREASE:
@@ -139,7 +138,9 @@ static uint8_t HandleDataRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *da
     case RAPP_MSG_TYPE_REMOTE_DISABLE:
     	*handled = TRUE;
 		val = *data; /* get data value */
+		void LF_StartFollowing(void);
     	break;
+
 #endif
     default: /*! \todo Handle your own messages here */
       break;
