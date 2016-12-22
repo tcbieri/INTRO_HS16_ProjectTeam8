@@ -14,6 +14,7 @@
 #include "Shell.h"
 #include "Motor.h"
 #include "Reflectance.h"
+#include "Tacho.h"
 #if PL_CONFIG_HAS_TURN
   #include "Turn.h"
 #endif
@@ -99,7 +100,7 @@ void setBreak(void){
 	FSM_state = BREAK;
 }
 
-
+static int counter;
 static void StateMachine2(void){
 	//case check stop
 
@@ -127,19 +128,24 @@ static void StateMachine2(void){
 		FSM_state = FORWARD;
 		LF_currState = STATE_FOLLOW_SEGMENT;
 		FSM_state_save = START;  //save current state
+		counter = 0;
 		break;
 
 	case FORWARD:
 		if(writeflag==FALSE){
 			SHELL_SendString("FORWARD!\r\n");
 			writeflag = TRUE;
+
+		}
+		if(counter <= 5) {
 			ContestSendSignal('B');
 		}
-
+		counter++;
 		if(LF_currState == STATE_IDLE)
 		{
 			FSM_state = TURN;
 			writeflag = FALSE;
+			counter = 0;
 
 		}
 
@@ -178,7 +184,7 @@ static void StateMachine2(void){
 			DRV_Reset();
 			DRV_SetMode(DRV_MODE_POS);
 			DRV_SetPos(300, 300);
-			ContestSendSignal('C');
+
 
 		}
 		break;
@@ -188,11 +194,17 @@ static void StateMachine2(void){
 		SHELL_SendString("END!\r\n");
 		writeflag = TRUE;
 		}
-		if(DRV_IsStopped())
+		if(counter < 5) {
+			ContestSendSignal('C');
+		}
+		counter++;
+//		if(DRV_IsStopped())
+		if(TACHO_GetSpeed(false) <= 30 && TACHO_GetSpeed(true) <= 30)
 		{
 			FSM_state = STOP;
 			DRV_SetSpeed(0,0);			// changed by Kevin
 			DRV_SetMode(DRV_MODE_STOP);
+			counter = 0;
 		}
 		//(playtune!?)
 		break;

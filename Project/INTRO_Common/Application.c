@@ -189,9 +189,9 @@ void APP_EventHandler(EVNT_Handle event) {
     		LCDMenu_IncSpeed();
 			(void)RAPP_SendPayloadDataBlock(&dummyValue, sizeof(dummyValue), RAPP_MSG_TYPE_SPEED_INCREASE, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_NONE);
 			LCDMenu_OnEvent(LCDMENU_EVENT_DRAW, NULL);
-			if(!startContestSignalA) {
+//			if(!startContestSignalA) {
 				ContestSendSignal('A');
-			}
+//			}
 		#endif
     }
     break;
